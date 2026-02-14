@@ -4,18 +4,9 @@
             background-color: #ffffff;
             margin: 1%;
         }
-        .backbtn{
-            position: fixed; top: 25px; left: 25px;
-            text-decoration: none; 
-            color: #000000;
-            font-size: 18px;
-        }
-        .backbtn:hover{
-            position: fixed; top: 25px; left: 25px;
-            text-decoration: underline;
-            color: #1600ba;
-            font-size: 18px;
-        }
+        
+
+/* Cover Art Containers */ 
         .pageholder{
             display: flex;
             flex-wrap: wrap;
@@ -132,10 +123,51 @@
             .coverbtn {width: 80%;}
             .backcoverbtn {width: 80%;}
         }
+
+
+/* Nav Bar */ 
+    .navbar{
+        width: 100%;
+        background: white;
+        box-shadow: 0px 10px 20;
+        position: fixed; top: 0%; left: 0%;
+        list-style-type: none;
+    }
+    .navbar li {
+        float: right;
+    }
+    .navbar li a{
+        display: block;
+        color: #000000;
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 18px;
+        
+    }
+    .navbar li a:hover{
+        text-decoration: underline;
+        color: #1600ba;
+        border-left: #000000; border-right: #000000; border-left-style: solid; border-right-style: solid; border-width: 2px;
+    }
+
+    .backbtn{
+        position: fixed; top: 10px; left: 15px;
+        text-decoration: none; 
+        color: #000000;
+        font-size: 18px;
+        z-index: 2;
+    }
+    .backbtn:hover{
+        position: fixed; top: 10px; left: 15px;
+        text-decoration: underline;
+        color: #1600ba;
+        font-size: 18px;
+    }
 /* Dropdown */
         .dropdown{
             position: relative;
-            width: 50%;
+            width: 40%;
             text-align: center;
             justify-self: center;
         }
@@ -203,7 +235,13 @@
 </head>
 
 <body>
-    <a href="https://noahmarkham.com/" class="backbtn" target="_blank">back</a>
+    <div class="navbar">
+        <a href="https://noahmarkham.com/" class="backbtn" target="_blank">back</a>
+        <li><a href="https://noahmarkham.com/">asdf</a></li>
+        <li><a href="https://noahmarkham.com/">asdf 2</a></li>
+    </div>
+    
+
     <div class="dropdown">
         <button class="stream-dropdown">stream</button>
         <div class="dropdown-content">
