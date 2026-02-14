@@ -2,10 +2,8 @@
     <style>
         body{
             background-color: #ffffff;
-            margin: 1%;
         }
         
-
 /* Cover Art Containers */ 
         .pageholder{
             display: flex;
@@ -13,12 +11,6 @@
             justify-content: space-evenly;
             padding: 1%;
             z-index: -3;
-        }
-        .bigpiccontainer{
-            display: flex;
-            height: fit-content;
-            justify-content: space-evenly;
-            padding: 1%;
         }
         .coverholder{
             width: 33%;
@@ -31,7 +23,7 @@
             text-decoration: none; color: #000000;
             
             text-align: center;
-            font-size: 14px;
+            font-size: 16px;
             color: rgb(0, 0, 0);
         }
         .coverholder:hover{
@@ -94,7 +86,13 @@
             99% {display: none;}
             100% {display: none;}
         }
-
+/* Big Cover Containers */ 
+        .bigpiccontainer{
+            display: flex;
+            height: fit-content;
+            justify-content: space-evenly;
+            padding: 1%;
+        }
         .imghide{
             display: none;
         }
@@ -112,19 +110,9 @@
             cursor: pointer;
             width: 100%;
         }
-
         .bigcovers{
             width: 40%;
         }
-       
-/* Media Query for mobile */
-        @media (max-width: 1200px) {
-            .coverholder {width: 90%;}
-            .coverbtn {width: 80%;}
-            .backcoverbtn {width: 80%;}
-        }
-
-
 /* Nav Bar */ 
     .navbar{
         width: 100%;
@@ -143,12 +131,11 @@
         padding: 10px 10px;
         text-decoration: none;
         font-size: 18px;
-        
     }
     .navbar li a:hover{
         text-decoration: underline;
         color: #1600ba;
-        border-left: #000000; border-right: #000000; border-left-style: solid; border-right-style: solid; border-width: 2px;
+        border-left: #000000; border-right: #000000; border-left-style: solid; border-right-style: solid; border-width: 1px;
     }
 
     .backbtn{
@@ -159,10 +146,8 @@
         z-index: 2;
     }
     .backbtn:hover{
-        position: fixed; top: 10px; left: 15px;
         text-decoration: underline;
         color: #1600ba;
-        font-size: 18px;
     }
 /* Dropdown */
         .dropdown{
@@ -173,30 +158,27 @@
         }
         .stream-dropdown{
             cursor: pointer;
+            justify-self: center;
         }
         .dropdown-content {
             display: none;
             background-color: #ffffff;
             box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
         }
-
         .dropdown-content a {
             color: black;
             padding: 4px 4px;
             text-decoration: none;
             display: block;
         }
-
         .dropdown-content a:hover {
             background-color: #ffffff;
             text-decoration: underline;
             color: #1600ba;
         }
-
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
         .dropdown:hover .dropbtn {
             background-color: #1600ba;
         }
@@ -204,7 +186,6 @@
         .btnholder{ 
             width: fit-content;
         }
-
         .ecwid-btn,
         .form-control__button {
             background-color: #000000 !important;
@@ -219,29 +200,29 @@
             justify-content: center! important;
             
         }
-        .my-download-btn-wrap {
-        border-style: solid;
-        border-width: .5px;
-        border-color: #000000;
-        padding-top: 1.3%;
-        }
 /* Hover */
         .ecsp .ecwid-btn:hover,
         .ecsp .form-control__button:hover {
             background-color: #c0c0c0 !important;
         }
-
+/* Media Query for mobile */
+        @media (max-width: 1200px) {
+            .coverholder {width: 90%; font-size: 24px;}
+            .coverbtn {width: 80%;}
+            .backcoverbtn {width: 80%;}
+            .backbtn {font-size: 24px;}
+            .navbar li a {font-size: 24px;}
+        }
     </style>
 </head>
 
 <body>
     <div class="navbar">
         <a href="https://noahmarkham.com/" class="backbtn" target="_blank">back</a>
-        <li><a href="https://noahmarkham.com/">asdf</a></li>
-        <li><a href="https://noahmarkham.com/">asdf 2</a></li>
+        <li><a href="https://noahmarkham.com/">Music</a></li>
+        <li><a href="https://noahmarkham.com/">Video</a></li>
     </div>
     
-
     <div class="dropdown">
         <button class="stream-dropdown">stream</button>
         <div class="dropdown-content">
