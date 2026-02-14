@@ -4,6 +4,18 @@
             background-color: #ffffff;
             margin: 1%;
         }
+        .backbtn{
+            position: fixed; top: 25px; left: 25px;
+            text-decoration: none; 
+            color: #000000;
+            font-size: 18px;
+        }
+        .backbtn:hover{
+            position: fixed; top: 25px; left: 25px;
+            text-decoration: underline;
+            color: #1600ba;
+            font-size: 18px;
+        }
         .pageholder{
             display: flex;
             flex-wrap: wrap;
@@ -26,6 +38,10 @@
             justify-content: space-evenly; align-items: center;
             row-gap: 1%;
             text-decoration: none; color: #000000;
+            
+            text-align: center;
+            font-size: 14px;
+            color: rgb(0, 0, 0);
         }
         .coverholder:hover{
             text-decoration: underline; color: #1600ba;
@@ -73,13 +89,6 @@
         .bcv3{
             animation-duration: 17s;
         }
-        .textholder{
-            width: 100%;
-            text-align: center;
-            font-size: 10px;
-            padding: 1%;
-            color: rgb(0, 0, 0);
-        }
         @keyframes coveronoff {
             0% {display: block;}
             49% {display: none}
@@ -118,14 +127,15 @@
         }
        
 /* Media Query for mobile */
-        @media (max-width: 900px) {
+        @media (max-width: 1200px) {
             .coverholder {width: 90%;}
         }
 /* Dropdown */
         .dropdown{
             position: relative;
-            width: 100%;
+            width: 50%;
             text-align: center;
+            justify-self: center;
         }
         .stream-dropdown{
             cursor: pointer;
@@ -191,6 +201,7 @@
 </head>
 
 <body>
+    <a href="https://noahmarkham.com/" class="backbtn" target="_blank">back</a>
     <div class="dropdown">
         <button class="stream-dropdown">stream</button>
         <div class="dropdown-content">
@@ -224,7 +235,7 @@
 <div class="pageholder">
 <!--Handshake-->
     <div class="coverholder">
-        <p class="textholder">Handshake<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
+        <p>Handshake<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
         <img id="HScoverbtn" class="coverbtn" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/COVER+6.png" alt="Handshake Cover">
         <img id="HSbackcoverbtn" class="backcoverbtn" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/alt+back+cover+5.png" alt="Handshake Back Cover">
     
