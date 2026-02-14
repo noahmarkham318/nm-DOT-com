@@ -122,17 +122,36 @@
         width: 100%;
         background-color: white;
         position: fixed; top: 0%; left: 0%;
-        box-shadow: 0px 0px 10px;
+        box-shadow: 0px 0px 0px;
         list-style-type: none;
         z-index: 1;
-        animation-name: navbarshadow; 
-        animation-timeline: scroll();
+        animation: navbarshadoweffect linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 200px;
+
     }
+
+    @supports (animation-timeline: scroll(root)){
+        .navbar {
+            animation-name: navbarshadow;
+            animation-timeline: scroll(root);
+            
+        }
+    }
+ 
+
     
     @keyframes navbarshadow{
         0% {box-shadow: 0px 0px 0px;}
         100% {box-shadow: 0px 0px 10px;}
     }
+
+    @keyframes navbarshadoweffect {
+        to {box-shadow: 0px 0px 10px;}
+    }  
+
+    
+    
     .navbar li {
         float: right;
     }
@@ -247,7 +266,7 @@
 </head>
 
 <body>
-    <div class="navbar">
+    <div id="navbar" class="navbar">
         <a href="https://noahmarkham.com/" class="backbtn" target="_blank">back</a>
         <li><a href="https://noahmarkham.com/">Music</a></li>
         <li><a href="https://noahmarkham.com/">Video</a></li>
@@ -339,6 +358,22 @@
 
 
 <script>
+//Scroll effect
+
+import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
+
+document.getElementById('navbar').animate(
+    { transform: ['translateY(0)', 'translateY(100px)']},
+    { fill: 'both',
+      timeline: new ScrollTimeline({
+        source: document.documentElement,
+      }),
+      rangeStart: new CSSUnitValue(0, 'px'),
+      rangeEnd: new CSSUnitValue(200, 'px'),
+    });
+
+
+
 
 //Full Size Cover Art
     //Handshake
