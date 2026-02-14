@@ -2,6 +2,7 @@
     <style>
         body{
             background-color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
         }
         
 /* Cover Art Containers */ 
@@ -150,6 +151,9 @@
         color: #1600ba;
     }
 /* Dropdown */
+        .dropdowncontainer{
+            width: 100%;
+        }
         .dropdown{
             position: relative;
             width: 40%;
@@ -165,7 +169,7 @@
             border: 1px solid black; border-radius: 5%;
             text-align: center;
             padding-top: .1%; padding-bottom: .1%; padding-right: 1%; padding-left: 1%;
-
+            font-size: 16px;
         }
         .dropdown-content {
             display: none;
@@ -220,6 +224,7 @@
             .backbtn {font-size: 4vw;}
             .navbar li a {font-size: 4vw;}
             .imgshow {display: none;}
+            .stream-dropdown {font-size: 3.5vw;}
         }
     </style>
 </head>
@@ -231,6 +236,7 @@
         <li><a href="https://noahmarkham.com/">Video</a></li>
     </div>
     
+    <div class="dropdowncontainer">
     <div class="dropdown">
         <button class="stream-dropdown">stream</button>
         <div class="dropdown-content">
@@ -241,6 +247,7 @@
         <a href="https://tidal.com/artist/36688543" target="_blank">tidal</a>
         <a href="https://www.deezer.com/us/artist/67600882?host=0&deferredFl=1" target="_blank">deezer</a>
         </div>
+    </div>
     </div>
 
     <div id="bpcontainer" class="bigpiccontainer">
