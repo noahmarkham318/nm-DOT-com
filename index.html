@@ -117,10 +117,11 @@
 /* Nav Bar */ 
     .navbar{
         width: 100%;
-        background: white;
+        background-color: white; backg
         box-shadow: 0px 10px 20;
         position: fixed; top: 0%; left: 0%;
         list-style-type: none;
+        z-index: 1;
     }
     .navbar li {
         float: right;
@@ -144,7 +145,7 @@
         text-decoration: none; 
         color: #000000;
         font-size: 18px;
-        z-index: 2;
+        z-index: 3;
     }
     .backbtn:hover{
         text-decoration: underline;
@@ -159,6 +160,7 @@
             width: 40%;
             text-align: center;
             justify-self: center;
+            z-index: 2;
         }
         .stream-dropdown{
             all: unset;
@@ -170,6 +172,7 @@
             text-align: center;
             padding-top: .1%; padding-bottom: .1%; padding-right: 1%; padding-left: 1%;
             font-size: 16px;
+            z-index: 2;
         }
         .dropdown-content {
             display: none;
@@ -225,6 +228,7 @@
             .navbar li a {font-size: 4vw;}
             .imgshow {display: none;}
             .stream-dropdown {font-size: 3.5vw;}
+            .dropdown-content a {font-size: 3.5vw;}
         }
     </style>
 </head>
