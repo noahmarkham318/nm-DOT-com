@@ -90,10 +90,15 @@
         }
 /* Big Cover Containers */ 
         .bigpiccontainer{
+            display: none;
+        }
+        .bigpiccontainerVISIBLE{
             display: flex;
             height: fit-content;
             justify-content: space-evenly;
             padding: 1%;
+            background-color: #dadada;
+            box-shadow: 0px 3px 6px inset;
         }
         .imghide{
             display: none;
@@ -114,20 +119,21 @@
         }
         .bigcovers{
             width: 40%;
+            aspect-ratio: 1/1;
         }
 /* Nav Bar */ 
     .navbar{
         width: 100%;
-        height: fit-content;
-        border-style: none; 
+        height: 40px;
+        border-style: none;
         background-color: white;
         position: fixed; top: 0%; left: 0%;
         box-shadow: 0px 0px 0px;
         list-style-type: none;
-        z-index: 1;
         animation: navbarshadoweffect linear both;
         animation-timeline: scroll(block root);
         animation-range: 0px 200px;
+        z-index: 2;
 
     }
 
@@ -153,14 +159,15 @@
     .navbarlist {
         float: right;
     }
-    .navbarLINK{
+    .navbarLINK, .navbar-dropdown{
         display: block;
-        color: #000000;
+        color: #000000; background-color: white;
+        cursor: pointer;
         text-align: center;
         padding: 10px 10px;
         text-decoration: none;
-        font-size: 18px;
-        border-style: none;
+        font-size: 18px; font-family: 'Times New Roman', Times, serif;
+        border-style: none; border-width: 0px;
     }
     .navbarLINK:hover{
         text-decoration: underline;
@@ -168,17 +175,6 @@
         
     }
 
-    .navbar-dropdown{
-        display: block;
-        color: #000000;
-        cursor: pointer;
-        background-color: white;
-        text-align: center;
-        padding: 10px 10px;
-        text-decoration: none;
-        font-size: 18px; font-family: 'Times New Roman', Times, serif;
-        border-style: none;
-    }
     .navbar-dropdown-content{    
         display: none;
             background-color: #ffffff;
@@ -228,7 +224,7 @@
             background-color: #f0f0f0;
             border: 1px solid black; border-radius: 5%;
             text-align: center;
-            padding-top: .1%; padding-bottom: .1%; padding-right: 10px; padding-left: 10px;
+            padding-top: .1%; padding-bottom: .1%; padding-right: 1%; padding-left: 1%;
             font-size: 16px;
             z-index: 2;
         }
@@ -280,10 +276,11 @@
             .coverbtn {width: 80%;}
             .backcoverbtn {width: 80%;}
             .backbtn {font-size: 4vw;}
-            .navbarLINK {font-size: 4vw;}
+            .navbarLINK, .navbar-dropdown {font-size: 4vw;}
             .imgshow {display: none;}
             .stream-dropdown {font-size: 3.5vw;}
-            .dropdown-content a {font-size: 3.5vw;}
+            .dropdownLINK {font-size: 3.5vw;}
+            .navbar-dropdown-link {font-size: 3.5vw;}
             .ecwid-btn {font-size: 2vh !important;}
             .form-control__button {font-size: 2vh !important;}
 
@@ -292,24 +289,22 @@
 </head>
 
 <body>
-   
-
 <!--Nav Bar-->
     <div id="navbar" class="navbar">
         <a href="https://noahmarkham.com/" class="backbtn" target="_blank">back</a>
         <li class="navbarlist">
-            <button class="navbar-dropdown">gallery</button>
-            <div class="navbar-dropdown-content">
-                <a class="navbar-dropdown-link" href="https://noahmarkham.com/">music</a>
-                <a class="navbar-dropdown-link" href="https://noahmarkham.com/">video</a>
-                <a class="navbar-dropdown-link" href="https://noahmarkham.com/">photo</a>
-            </div>
+            <button class="navbarLINK">gallery</button>
+                <div class="navbar-dropdown-content">
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/">music</a>
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/">video</a>
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/">photo</a>
+                </div>
         </li>
         <li class="navbarlist">
-            <a class="navbarLINK" href="https://noahmarkham.com/">music</a>
+            <a class="navbarLINK" href="https://noahmarkham.com/">shop</a>
         </li>
         <li class="navbarLIST">
-            <a class="navbarLINK" href="https://noahmarkham.com/">video</a>
+            <a class="navbarLINK" href="https://noahmarkham.com/">dates</a>
         </li>
     </div>
     
@@ -346,9 +341,6 @@
      
 
 <div class="pageholder">
-
-
-    
 <!--Handshake-->
     <div class="coverholder">
         <p>Handshake<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
@@ -393,14 +385,6 @@
 </div>    
     </a>
 
-
-
-
-
-
-
-
-
 <script>
 //Scroll effect
 
@@ -416,27 +400,53 @@ document.getElementById('navbar').animate(
 
 
 //Full Size Cover Art
+var bpcontainer = document.getElementById("bpcontainer");
+
+var HScovers = document.getElementById("HScovers");
+var GEMcovers = document.getElementById("GEMcovers");
+var age25covers = document.getElementById("age25covers");
+
+var allcovers = element.classList.contains("HScovers", "GEMcovers", "age25covers")
+
     //Handshake
 document.getElementById("HScoverbtn").addEventListener("click", HSexpand)
 document.getElementById("HSbackcoverbtn").addEventListener("click", HSexpand)
 function HSexpand() {
-  var x = document.getElementById("HScovers");
-    x.classList.toggle("imgshow")
-}
+        {if (GEMcovers.classList.contains("imgshow")) {
+            GEMcovers.classList.remove("imgshow")}
+            GEMcovers.classList.add("imghide")}
+        {if (age25covers.classList.contains("imgshow")) {
+            age25covers.classList.remove("imgshow")}
+            age25covers.classList.add("imghide")}
+        HScovers.classList.toggle("imgshow")
+        HScovers.classList.remove("imghide")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");}
     //G & EM
 document.getElementById("GEMcoverbtn").addEventListener("click", GEMexpand)
 document.getElementById("GEMbackcoverbtn").addEventListener("click", GEMexpand)
 function GEMexpand() {
-  var x = document.getElementById("GEMcovers");
-    x.classList.toggle("imgshow")
-}
+        {if (HScovers.classList.contains("imgshow")) {
+            HScovers.classList.remove("imgshow")}
+            HScovers.classList.add("imghide")}
+        {if (age25covers.classList.contains("imgshow")) {
+            age25covers.classList.remove("imgshow")}
+            age25covers.classList.add("imghide")}
+        GEMcovers.classList.toggle("imgshow")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");} 
+
     //attempt @ age 25
 document.getElementById("age25coverbtn").addEventListener("click", age25expand)
 document.getElementById("age25backcoverbtn").addEventListener("click", age25expand)
 function age25expand() {
-  var x = document.getElementById("age25covers");
-    x.classList.toggle("imgshow")
-}
+        {if (HScovers.classList.contains("imgshow")) {
+            HScovers.classList.remove("imgshow")}
+            HScovers.classList.add("imghide")}
+        {if (GEMcovers.classList.contains("imgshow")) {
+            GEMcovers.classList.remove("imgshow")}
+            GEMcovers.classList.add("imghide")}
+        age25covers.classList.toggle("imgshow")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");}
+
 //Reset to normal size
     //Handshake
 document.getElementById("HScovers").addEventListener("click", HSexpand)
