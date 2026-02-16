@@ -1,0 +1,471 @@
+<head>
+    <title>music</title>
+    <style>
+        body{
+            background-color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0px;
+            
+        }
+/* Cover Art Containers */ 
+        .pageholder{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 1%;
+            z-index: -3;
+        }
+        .coverholder{
+            width: 33%;
+            
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly; align-items: center;
+            row-gap: 1%;
+            text-decoration: none; color: #000000;
+            
+            text-align: center;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+        }
+        .coverholder:hover{
+            text-decoration: underline; color: #1600ba;
+            
+        }
+        .coverbtn{
+            width: 70%;
+            cursor: pointer;
+            
+            margin: 0%;
+            padding: 0%;
+            animation-name: coveronoff;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+        }
+        .coverbtnstill {
+            width: 70%;
+            cursor: pointer;
+            
+            margin: 0%;
+            padding: 0%;
+            border-style: solid;
+            border-width: .3%; 
+            border-color: #000000;
+        }
+        .cv2{
+            animation-duration: 13s;
+        }
+        .cv3{
+            animation-duration: 17s;
+        }
+        .backcoverbtn{
+            width: 70%;
+            cursor: pointer;
+            
+            margin: 0%;
+            padding: 0%;
+            animation-name: coveroffon;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+        }
+        .bcv2{
+            animation-duration: 13s;
+        }
+        .bcv3{
+            animation-duration: 17s;
+        }
+        @keyframes coveronoff {
+            0% {display: block;}
+            49% {display: none}
+            50% {display: none;}
+            99% {display: none;}
+            100% {display: block;}
+        }
+        @keyframes coveroffon {
+            0% {display: none;}
+            49% {display: none;}
+            50% {display: block;}
+            99% {display: none;}
+            100% {display: none;}
+        }
+/* Big Cover Containers */ 
+        .bigpiccontainer{
+            display: none;
+        }
+        .bigpiccontainerVISIBLE{
+            display: flex;
+            height: fit-content;
+            justify-content: space-evenly;
+            padding: 1%;
+            background-color: #dadada;
+            box-shadow: 0px 3px 6px inset;
+        }
+        .imghide{
+            display: none;
+        }
+        .imgshow{
+            display: flex;
+            justify-content: space-evenly;
+            cursor: pointer;
+        }
+        .storehide{
+            display: none;
+        }
+        .storeshow{
+            display: flex;
+            justify-content: space-evenly;
+            cursor: pointer;
+            width: 100%;
+        }
+        .bigcovers{
+            width: 40%;
+            aspect-ratio: 1/1;
+        }
+/* Nav Bar */ 
+    .navbar{
+        width: 100%;
+        height: fit-content;
+        border-style: none;
+        background-color: white;
+        position: fixed; top: 0%; left: 0%;
+        box-shadow: 0px 0px 0px;
+        list-style-type: none;
+        animation: navbarshadoweffect linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 200px;
+        z-index: 2;
+
+    }
+
+      @supports (animation-timeline: scroll(root)){
+        .navbar {
+            animation-name: navbarshadow;
+            animation-timeline: scroll(root);
+            
+        }
+        
+    }
+  
+    
+    @keyframes navbarshadow{
+        0% {box-shadow: 0px 0px 0px;}
+        100% {box-shadow: 0px 0px 10px;}
+    }
+
+    @keyframes navbarshadoweffect {
+        from {box-shadow: 0px 0px 10px;}
+        to {box-shadow: 0px 0px 10px;}
+    }  
+
+    
+    .navbarlist {
+        float: right;
+    }
+    .navbarLINK, .navbar-dropdown{
+        display: block;
+        color: #000000; background-color: white;
+        cursor: pointer;
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 18px; font-family: 'Times New Roman', Times, serif;
+        border-style: none; border-width: 0px;
+    }
+    .navbarLINK:hover{
+        text-decoration: underline;
+        color: #1600ba;
+        
+    }
+
+    .navbar-dropdown-content{    
+        position: absolute;
+        width: 100%;
+        height: fit-content;
+        display: none;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    }
+    .navbar-dropdown-link{
+        color: black;
+            padding: 4px 4px;
+            text-decoration: none;
+            display: block;
+    }
+    .navbar-dropdown-link:hover, .navbar-dropdown:hover {
+            background-color: #ffffff;
+            text-decoration: underline;
+            color: #1600ba;
+        }
+        .navbarlist:hover .navbar-dropdown-content {
+            display: block;
+        }
+
+/* Back Button */
+    .backbtn{
+        position: fixed; top: 10px; left: 15px;
+        text-decoration: none; 
+        color: #000000;
+        font-size: 18px;
+        z-index: 3;
+    }
+    .backbtn:hover{
+        text-decoration: underline;
+        color: #1600ba;
+    }
+/* Stream Dropdown */
+        .dropdown{
+            position: relative;
+            display: block;
+            margin: auto;
+            width: 40%;
+            text-align: center;
+            z-index: 2;
+        }
+        .stream-dropdown{
+            all: unset;
+            display: block;
+            margin-left: auto; margin-right: auto; margin-top: 10px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid black; border-radius: 5%;
+            text-align: center;
+            padding-top: .1%; padding-bottom: .1%; padding-right: 1%; padding-left: 1%;
+            font-size: 16px;
+            z-index: 2;
+        }
+        .dropdown-content {
+            display: none;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+        }
+        .dropdownLINK {
+            color: black;
+            padding: 4px 4px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdownLINK:hover {
+            background-color: #ffffff;
+            text-decoration: underline;
+            color: #1600ba;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+/* Ecwid Button */
+        .btnholder{ 
+            width: fit-content;
+        }
+        .ecwid-btn,
+        .form-control__button {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border-radius: 0px !important;
+            font-family: 'Times New Roman', serif !important;  /* change to your font */
+            font-size: 14px !important;                    /* optional: change size */
+            font-weight: normal !important;                  /* optional: make text bold */
+            text-transform: lowercase !important;  /* optional: uppercase text */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center! important;
+        }
+/* Hover */
+        .ecsp .ecwid-btn:hover,
+        .ecsp .form-control__button:hover {
+            background-color: #c0c0c0 !important;
+        }
+/* Media Query For Mobile */
+        @media (max-width: 1200px) {
+            .coverholder {width: 90%; font-size: 3.5vw;}
+            .coverholder:hover{text-decoration: none; color: black;}
+            .coverbtn {width: 80%;}
+            .backcoverbtn {width: 80%;}
+            .backbtn {font-size: 4vw;}
+            .navbarLINK, .navbar-dropdown {font-size: 4vw;}
+            .navbar-dropdown-link {padding: 10px 4px;}
+            .imgshow {display: none;}
+            .stream-dropdown {font-size: 3.5vw;}
+            .dropdownLINK {font-size: 3.5vw; padding: 10px 4px;}
+            .navbar-dropdown-link {font-size: 3.5vw;}
+            .ecwid-btn {font-size: 2.5vw !important;}
+            .form-control__button {font-size: 2vw !important;}
+
+        }
+    </style>
+</head>
+
+<body>
+<!--Nav Bar-->
+    <div id="navbar" class="navbar">
+        <a href="https://noahmarkham.com/" class="backbtn" target="_blank">back</a>
+        <li class="navbarlist">
+            <button class="navbarLINK">gallery</button>
+                <div class="navbar-dropdown-content">
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/">music</a>
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/">video</a>
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/">photo</a>
+                </div>
+        </li>
+        <li class="navbarlist">
+            <a class="navbarLINK" href="https://noahmarkham.com/">calendar</a>
+        </li>
+        <li class="navbarLIST">
+            <a class="navbarLINK" href="https://noahmarkham.com/">shop</a>
+        </li>
+    </div>
+    
+<!--Streaming Dropdown-->
+    <div class="dropdown">
+        <button class="stream-dropdown">stream</button>
+        <div class="dropdown-content">
+        <a class="dropdownLINK" href="https://music.apple.com/us/artist/noah-markham/1553834605" target="_blank">apple music</a>
+        <a class="dropdownLINK" href="https://open.spotify.com/artist/1JcqOc8cUn2u64XBOBkiKm" target="_blank">spotify</a>
+        <a class="dropdownLINK"href="https://music.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">yt music</a>
+        <a class="dropdownLINK" href="https://music.amazon.in/artists/B08WX6WMG3/noah-markham" target="_blank">amazon</a>
+        <a class="dropdownLINK" href="https://tidal.com/artist/36688543" target="_blank">tidal</a>
+        <a class="dropdownLINK" href="https://www.deezer.com/us/artist/67600882?host=0&deferredFl=1" target="_blank">deezer</a>
+        </div>
+    </div>
+
+<!--Big Covers-->
+    <div id="bpcontainer" class="bigpiccontainer">
+    <div id="HScovers" class="imghide">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/COVER+6.png" alt="handshake cover" class="bigcovers">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/alt+back+cover+5.png" alt="handshake cover" class="bigcovers">
+    </div>
+    <div id="GEMcovers" class="imghide">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Grimes+%26+Elon+Musk+Cover+Art+Mockup+7.png" alt="GEM cover" class="bigcovers">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/G+%26+EM+1_2.png" alt="GEM back cover" class="bigcovers">
+    </div>  
+
+    <div id="age25covers" class="imghide">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/smashmouth+(contrast+%2B+hue+%2Blil+less+saturation).png" alt="age25 cover" class="bigcovers">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/attempt+@+age+alt.png" alt="age25 back cover" class="bigcovers">
+    </div>
+    </div>
+
+     
+
+<div class="pageholder">
+<!--Handshake-->
+    <div class="coverholder">
+        <p>Handshake<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
+        <img id="HScoverbtn" class="coverbtn" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/COVER+6.png" alt="Handshake Cover">
+        <img id="HSbackcoverbtn" class="backcoverbtn" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/alt+back+cover+5.png" alt="Handshake Back Cover">
+    
+        <div class="btnholder">
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
+        </div>
+    </div>
+    
+<!--Grimes & Elon Musk-->
+   <div class="coverholder">
+        <p class="textholder">Grimes & Elon Musk<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
+        <img id="GEMcoverbtn" class="coverbtn cv2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Grimes+%26+Elon+Musk+Cover+Art+Mockup+7.png" alt="Handshake Cover">
+        <img id="GEMbackcoverbtn" class="backcoverbtn bcv2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/G+%26+EM+1_2.png" alt="Handshake Back Cover">
+    
+        <div class="btnholder">
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
+        </div>
+    </div>
+
+<!--attempt @ age 25-->
+    <div class="coverholder">
+        <p class="textholder">attempt @ age 25<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
+        <img id="age25coverbtn" class="coverbtn cv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/smashmouth+(contrast+%2B+hue+%2Blil+less+saturation).png" alt="Handshake Cover">
+        <img id="age25backcoverbtn" class="backcoverbtn bcv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/attempt+@+age+alt.png" alt="Handshake Back Cover">
+    
+        <div class="btnholder">
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
+        </div>
+    </div>
+
+<!--Produciton Credits-->
+    <a href="https://www.youtube.com/watch?v=ThfqW1ARnSE" target="_blank" class="coverholder">
+        <p class="textholder">Production Credits<br><span style="font-size: 75%; font-style: italic;">work from 2019-2023 when i thought of myself as solely as a producer</span></p>
+        <video autoplay loop muted playsinline id="prodcredits" class="coverbtnstill" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Prod+Animation+GLITCH.mp4" alt="Handshake Cover">
+    
+        <div class="btnholder">
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
+        </div>
+</div>    
+    </a>
+
+<script>
+
+    import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
+
+//Scroll effect
+
+document.getElementById('navbar').animate(
+    { transform: ['translateY(0)', 'translateY(100px)']},
+    { fill: 'both',
+      timeline: new ScrollTimeline({
+        source: document.documentElement,
+      }),
+      rangeStart: new CSSUnitValue(0, 'px'),
+      rangeEnd: new CSSUnitValue(200, 'px'),
+    });
+
+
+//Full Size Cover Art
+var bpcontainer = document.getElementById("bpcontainer");
+
+var HScovers = document.getElementById("HScovers");
+var GEMcovers = document.getElementById("GEMcovers");
+var age25covers = document.getElementById("age25covers");
+
+var allcovers = element.classList.contains("HScovers", "GEMcovers", "age25covers")
+
+    //Handshake
+document.getElementById("HScoverbtn").addEventListener("click", HSexpand)
+document.getElementById("HSbackcoverbtn").addEventListener("click", HSexpand)
+function HSexpand() {
+        {if (GEMcovers.classList.contains("imgshow")) {
+            GEMcovers.classList.remove("imgshow")}
+            GEMcovers.classList.add("imghide")}
+        {if (age25covers.classList.contains("imgshow")) {
+            age25covers.classList.remove("imgshow")}
+            age25covers.classList.add("imghide")}
+        HScovers.classList.toggle("imgshow")
+        HScovers.classList.remove("imghide")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");}
+    //G & EM
+document.getElementById("GEMcoverbtn").addEventListener("click", GEMexpand)
+document.getElementById("GEMbackcoverbtn").addEventListener("click", GEMexpand)
+function GEMexpand() {
+        {if (HScovers.classList.contains("imgshow")) {
+            HScovers.classList.remove("imgshow")}
+            HScovers.classList.add("imghide")}
+        {if (age25covers.classList.contains("imgshow")) {
+            age25covers.classList.remove("imgshow")}
+            age25covers.classList.add("imghide")}
+        GEMcovers.classList.toggle("imgshow")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");} 
+
+    //attempt @ age 25
+document.getElementById("age25coverbtn").addEventListener("click", age25expand)
+document.getElementById("age25backcoverbtn").addEventListener("click", age25expand)
+function age25expand() {
+        {if (HScovers.classList.contains("imgshow")) {
+            HScovers.classList.remove("imgshow")}
+            HScovers.classList.add("imghide")}
+        {if (GEMcovers.classList.contains("imgshow")) {
+            GEMcovers.classList.remove("imgshow")}
+            GEMcovers.classList.add("imghide")}
+        age25covers.classList.toggle("imgshow")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");}
+
+//Reset to normal size
+    //Handshake
+document.getElementById("HScovers").addEventListener("click", HSexpand)
+    //G & EM
+document.getElementById("GEMcovers").addEventListener("click", GEMexpand)
+    //attempt @ age 25
+document.getElementById("age25covers").addEventListener("click", age25expand)
+
+
+</script>
+</body>
+
