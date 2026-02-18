@@ -95,12 +95,15 @@
             display: none;
         }
         .bigpiccontainerVISIBLE{
+            margin-top: .5%;
             display: flex;
-            height: fit-content;
+            position: fixed;
+            height: 100%;
             justify-content: space-evenly;
             padding: 1%;
             background-color: #dadada;
-            box-shadow: 0px 3px 6px inset;
+          
+            z-index: 10;
         }
         .imghide{
             display: none;
@@ -120,6 +123,7 @@
             width: 100%;
         }
         .bigcovers{
+            margin-bottom: auto; margin-top: auto;
             width: 40%;
             aspect-ratio: 1/1;
         }
@@ -132,22 +136,12 @@
         position: fixed; top: 0%; left: 0%;
         box-shadow: 0px 0px 0px;
         list-style-type: none;
-        animation: navbarshadoweffect linear both;
-        animation-timeline: scroll(block root);
+        animation-name: navbarshadow;
+        animation-timeline: scroll(root);
         animation-range: 0px 200px;
         z-index: 2;
 
     }
-
-      @supports (animation-timeline: scroll(root)){
-        .navbar {
-            animation-name: navbarshadow;
-            animation-timeline: scroll(root);
-            
-        }
-        
-    }
-  
     
     @keyframes navbarshadow{
         0% {box-shadow: 0px 0px 0px;}
@@ -254,6 +248,77 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+
+/* Play Buttons */
+    .play-button, .forward-button, .back-button {
+            height: 32px;
+            width: 32px;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+
+    }
+    .play-button:hover, .forward-button:hover, .back-button:hover {
+        transform: scale(.9);
+    } 
+    .playicon {
+        height: 0px;
+        width: 0px;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 9px solid white;
+        border-radius: 0px;
+        
+    }
+    .pauseicon {
+        height: 15px;
+        width: 15px;
+        background-color: transparent;
+        border-width: 0px 0px 0px 9px;
+        border-style: double;
+        border-color: white;
+        margin-left: 3.5px;
+    }
+    .playspeedicon{
+        height: 15px; width: 15px;
+        background-color: rgb(0, 0, 0);
+        font-family: 'Times New Roman', Times, serif;
+        color:white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .btnsrow{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        margin: auto;
+
+}
+    .btnscontainer{
+        width: 100%;
+        display: block;
+        margin-top: 4%;
+    }
+
+    .handshakedropdowncontainer{
+        margin-top: 4%;
+    }
+    .age25dropdowncontainer{
+        margin-top: 4%;
+        opacity: 0%;
+    }
+    .GEMdropdowncontainer{
+        margin-top: 4%;
+        opacity: 0%;
+    }
 /* Ecwid Button */
         .btnholder{ 
             width: fit-content;
@@ -322,7 +387,7 @@
         <div class="dropdown-content">
         <a class="dropdownLINK" href="https://music.apple.com/us/artist/noah-markham/1553834605" target="_blank">apple music</a>
         <a class="dropdownLINK" href="https://open.spotify.com/artist/1JcqOc8cUn2u64XBOBkiKm" target="_blank">spotify</a>
-        <a class="dropdownLINK"href="https://music.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">yt music</a>
+        <a class="dropdownLINK" href="https://music.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">yt music</a>
         <a class="dropdownLINK" href="https://music.amazon.in/artists/B08WX6WMG3/noah-markham" target="_blank">amazon</a>
         <a class="dropdownLINK" href="https://tidal.com/artist/36688543" target="_blank">tidal</a>
         <a class="dropdownLINK" href="https://www.deezer.com/us/artist/67600882?host=0&deferredFl=1" target="_blank">deezer</a>
@@ -354,39 +419,116 @@
         <p>Handshake<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
         <img id="HScoverbtn" class="coverbtn" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/COVER+6.png" alt="Handshake Cover">
         <img id="HSbackcoverbtn" class="backcoverbtn" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/alt+back+cover+5.png" alt="Handshake Back Cover">
-    
+
+<!--Handshake Dropdown-->
+<div class="handshakedropdowncontainer">
+    <div class="selector">
+    <label for="membership">Choose a song:</label>
+        <select name="membership" id="membership">
+            <option value="FAWKMONEY" selected>1. #FAWKMONEY</option>
+            <option value="GAWK">2. GAWK</option>
+            <option value="afterleftgone">3. after left gone</option>
+            <option value="asitgrowsitgets">4. as it grows it gets</option>
+            <option value="Callmecrazy">5. Call me crazy don't shout</option>
+    </select>
+    </div>
+</div>
+
+<!--Play Buttons-->
+    <audio id="player"></audio>
+    <div class="btnscontainer">
+        <!--Buttons Row 1-->
+         <div class="btnsrow">
+            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
+            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
+            <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
+            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
+            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
+            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
+        </div>
+    </div>
+<!--Ecwid Button-->
         <div class="btnholder">
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
         </div>
     </div>
+
     
 <!--Grimes & Elon Musk-->
    <div class="coverholder">
         <p class="textholder">Grimes & Elon Musk<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
         <img id="GEMcoverbtn" class="coverbtn cv2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Grimes+%26+Elon+Musk+Cover+Art+Mockup+7.png" alt="Handshake Cover">
         <img id="GEMbackcoverbtn" class="backcoverbtn bcv2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/G+%26+EM+1_2.png" alt="Handshake Back Cover">
-    
+<!--Dropdown (SPACEFILLER)-->
+<div class="GEMdropdowncontainer">
+    <div class="selector">
+    <label for="membership">Choose a song:</label>
+        <select name="membership" id="membership">
+            <option value="attempt@age25" selected>attempt @ age 25</option>
+    </select>
+    </div>
+</div>
+<!--Play Buttons-->
+    <audio id="player"></audio>
+    <div class="btnscontainer">
+        <!--Buttons Row 1-->
+         <div class="btnsrow">
+            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
+            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
+            <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
+            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
+            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
+            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
+        </div> 
+    </div>
         <div class="btnholder">
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
         </div>
     </div>
+
 
 <!--attempt @ age 25-->
     <div class="coverholder">
         <p class="textholder">attempt @ age 25<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
         <img id="age25coverbtn" class="coverbtn cv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/smashmouth+(contrast+%2B+hue+%2Blil+less+saturation).png" alt="Handshake Cover">
         <img id="age25backcoverbtn" class="backcoverbtn bcv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/attempt+@+age+alt.png" alt="Handshake Back Cover">
-    
+<!--attempt @ age 25 Dropdown-->
+<div class="age25dropdowncontainer">
+    <div class="selector">
+    <label for="membership">Choose a song:</label>
+        <select name="membership" id="membership">
+            <option value="FAWKMONEY" selected>1. #FAWKMONEY</option>
+            <option value="GAWK">2. GAWK</option>
+            <option value="afterleftgone">3. after left gone</option>
+            <option value="asitgrowsitgets">4. as it grows it gets</option>
+            <option value="Callmecrazy">5. Call me crazy don't shout</option>
+    </select>
+    </div>
+</div>
+<!--Play Buttons-->
+    <audio id="player"></audio>
+    <div class="btnscontainer">
+        <!--Buttons Row 1-->
+         <div class="btnsrow">
+            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
+            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
+            <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
+            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
+            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
+            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
+        </div>
+    </div>
         <div class="btnholder">
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
         </div>
     </div>
-
 <!--Produciton Credits-->
     <a href="https://www.youtube.com/watch?v=ThfqW1ARnSE" target="_blank" class="coverholder">
         <p class="textholder">Production Credits<br><span style="font-size: 75%; font-style: italic;">work from 2019-2023 when i thought of myself as solely as a producer</span></p>
         <video autoplay loop muted playsinline id="prodcredits" class="coverbtnstill" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Prod+Animation+GLITCH.mp4" alt="Handshake Cover">
-    
         <div class="btnholder">
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
         </div>
@@ -395,19 +537,7 @@
 
 <script>
 
-    import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
 
-//Scroll effect
-
-document.getElementById('navbar').animate(
-    { transform: ['translateY(0)', 'translateY(100px)']},
-    { fill: 'both',
-      timeline: new ScrollTimeline({
-        source: document.documentElement,
-      }),
-      rangeStart: new CSSUnitValue(0, 'px'),
-      rangeEnd: new CSSUnitValue(200, 'px'),
-    });
 
 
 //Full Size Cover Art
@@ -416,8 +546,6 @@ var bpcontainer = document.getElementById("bpcontainer");
 var HScovers = document.getElementById("HScovers");
 var GEMcovers = document.getElementById("GEMcovers");
 var age25covers = document.getElementById("age25covers");
-
-var allcovers = element.classList.contains("HScovers", "GEMcovers", "age25covers")
 
     //Handshake
 document.getElementById("HScoverbtn").addEventListener("click", HSexpand)
@@ -460,11 +588,138 @@ function age25expand() {
 
 //Reset to normal size
     //Handshake
-document.getElementById("HScovers").addEventListener("click", HSexpand)
+document.getElementById("HScovers").addEventListener("click", HSexpand);
     //G & EM
-document.getElementById("GEMcovers").addEventListener("click", GEMexpand)
+document.getElementById("GEMcovers").addEventListener("click", GEMexpand);
     //attempt @ age 25
-document.getElementById("age25covers").addEventListener("click", age25expand)
+document.getElementById("age25covers").addEventListener("click", age25expand);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Tracks
+
+
+
+
+
+//Play Pause Icon Toggle
+let iconswitch = document.getElementById("playicon");
+let player = document.getElementById("player");
+
+
+function playpause() {   
+    if (iconswitch.classList.contains("playicon")) {
+        iconswitch.classList.remove("playicon");
+        iconswitch.classList.add("pauseicon");
+    }
+    else {
+        iconswitch.classList.remove("pauseicon");
+        iconswitch.classList.add("playicon");
+    }  
+};
+
+player.addEventListener("ended", playpause);
+
+//Play Pause Toggle
+function togglePlay() {
+   return player.paused ? player.play() : player.pause();
+};
+
+//Playspeed
+
+function halfspeed() {
+   player.playbackRate = 0.5;
+   player.preservesPitch = false;
+};
+function threequartspeed() {
+   player.playbackRate = 0.75;
+   player.preservesPitch = false;
+};
+function normalspeed() {
+   player.playbackRate = 1;
+   player.preservesPitch = false;
+};
+function onepointfivespeed() {
+   player.playbackRate = 1.5;
+   player.preservesPitch = false;
+};
+function twicespeed() {
+   player.playbackRate = 2;
+   player.preservesPitch = false; 
+};
+
+
+//Start From Beginning
+function startover(){
+    player.currentTime = 0
+}
+
+document.getElementById("startoverbtn").addEventListener("click", startover)
+
+
+//Next & Back Buttons
+const membershipEl = document.getElementById("membership");
+
+
+//Handshake Dropdown
+const sounds = {
+  FAWKMONEY: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/1+%23FAWKMONEY+fitting+in+(my+last+pill)+(mix+VIII).wav"
+  },
+  GAWK: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/2+GAWK+(ft.+Camp+Circadia)+(mix+8).wav"
+  },
+  afterleftgone: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/3+after+left+gone+(mix+6).wav"
+  },
+  asitgrowsitgets: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/4+as+it+grows+it+gets+(new+mix+III).wav"
+  },
+  Callmecrazy: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/5+call+me+crazy+dont+shout+(mix+8).wav"
+  }
+};
+
+player.src = sounds[membershipEl.value].url;
+
+membershipEl.addEventListener("change", (e) => {
+    player.src = sounds[e.target.value].url; 
+    iconswitch.classList.remove("pauseicon");
+    iconswitch.classList.add("playicon");
+});
+
+
+
+
 
 
 </script>
