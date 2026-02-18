@@ -213,7 +213,7 @@
             position: relative;
             display: block;
             margin: auto;
-            width: 25%;
+            width: fit-content;
             text-align: center;
             z-index: 2;
         }
@@ -225,7 +225,7 @@
             background-color: #f0f0f0;
             border: 1px solid black; border-radius: 5%;
             text-align: center;
-            padding-top: .1%; padding-bottom: .1%; padding-right: 1%; padding-left: 1%;
+            padding-top: 1%; padding-bottom: 1%; padding-right: 5%; padding-left: 5%;
             font-size: 16px;
             z-index: 2;
         }
@@ -236,7 +236,7 @@
         }
         .dropdownLINK {
             color: black;
-            padding: 4px 4px;
+            padding: 4px 10px;
             text-decoration: none;
             display: block;
         }
@@ -382,7 +382,7 @@
             <a class="navbarLINK" href="https://noahmarkham.com/">calendar</a>
         </li>
         <li class="navbarLIST">
-            <a class="navbarLINK" href="https://noahmarkham.com/">shop</a>
+            <a class="navbarLINK" href="https://noahmarkham.com/shop">shop</a>
         </li>
     </div>
     
@@ -435,6 +435,15 @@
             <option value="afterleftgone">3. after left gone</option>
             <option value="asitgrowsitgets">4. as it grows it gets</option>
             <option value="Callmecrazy">5. Call me crazy don't shout</option>
+            <option value="FM">6. FM</option>
+            <option value="ihatemoney">7. i hate money</option>
+            <option value="ilovepeople">8. II: i love people (co-prod by Trevor McFarland)</option>
+            <option value="ihatepeople">9. III: i hate people</option>
+            <option value="ilovemoney">10. IV: i love money</option>
+            <option value="Indecision">11. Indecision</option>
+            <option value="Pocketofbags">12. Pocket of bags</option>
+            <option value="Livinginafan">13. Living in a fan</option>
+            
     </select>
     </div>
 </div>
@@ -469,20 +478,20 @@
 <div class="GEMdropdowncontainer">
     <div class="selector">
     <label for="membership">Choose a song:</label>
-        <select name="membership" id="membership">
-            <option value="attempt@age25" selected>attempt @ age 25</option>
+        <select name="membership" id="">
+            <option value="attempt@age25" selected>Grimes &amp; Elon Musk</option>
     </select>
     </div>
 </div>
 <!--Play Buttons-->
-    <audio id="player"></audio>
+    <audio id=""></audio>
     <div class="btnscontainer">
         <!--Buttons Row 1-->
          <div class="btnsrow">
             <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
             <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
-            <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
-            <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
+            <button class="play-button" id=""><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id=""></div></button>
             <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
             <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
             <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
@@ -503,24 +512,20 @@
 <div class="age25dropdowncontainer">
     <div class="selector">
     <label for="membership">Choose a song:</label>
-        <select name="membership" id="membership">
-            <option value="FAWKMONEY" selected>1. #FAWKMONEY</option>
-            <option value="GAWK">2. GAWK</option>
-            <option value="afterleftgone">3. after left gone</option>
-            <option value="asitgrowsitgets">4. as it grows it gets</option>
-            <option value="Callmecrazy">5. Call me crazy don't shout</option>
+        <select name="membership" id="">
+            <option value="FAWKMONEY" selected>attempt @ age 25</option>
     </select>
     </div>
 </div>
 <!--Play Buttons-->
-    <audio id="player"></audio>
+    <audio id=""></audio>
     <div class="btnscontainer">
         <!--Buttons Row 1-->
          <div class="btnsrow">
             <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
             <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
-            <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
-            <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
+            <button class="play-button" id=""><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id=""></div></button>
             <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
             <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
             <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
@@ -531,7 +536,7 @@
         </div>
     </div>
 <!--Produciton Credits-->
-    <a href="https://www.youtube.com/watch?v=ThfqW1ARnSE" target="_blank" class="coverholder">
+    <a href="https://www.youtube.com/@GRINDINGINTHISHAUS" target="_blank" class="coverholder">
         <p class="textholder">Production Credits<br><span style="font-size: 75%; font-style: italic;">work from 2019-2023 when i thought of myself as solely as a producer</span></p>
         <video autoplay loop muted playsinline id="prodcredits" class="coverbtnstill" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Prod+Animation+GLITCH.mp4" alt="Handshake Cover">
         <div class="btnholder">
@@ -698,20 +703,44 @@ const membershipEl = document.getElementById("membership");
 //Handshake Dropdown
 const sounds = {
   FAWKMONEY: {
-    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/1+%23FAWKMONEY+fitting+in+(my+last+pill)+(mix+VIII).wav"
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/1+%23FAWKMONEY.mp3"
   },
   GAWK: {
-    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/2+GAWK+(ft.+Camp+Circadia)+(mix+8).wav"
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/2+GAWK+(ft.+Camp+Circadia).mp3"
   },
   afterleftgone: {
-    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/3+after+left+gone+(mix+6).wav"
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/3+after+left+gone.mp3"
   },
   asitgrowsitgets: {
-    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/4+as+it+grows+it+gets+(new+mix+III).wav"
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/4+as+it+grows+it+gets+(new+mix+III).mp3"
   },
   Callmecrazy: {
-    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/5+call+me+crazy+dont+shout+(mix+8).wav"
-  }
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/5+call+me+crazy+dont+shout+(mix+8).mp3"
+  },
+  FM: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/6+FM+(mix+2).mp3"
+  },
+  ihatemoney: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/7+I+i+hate+money+(mix+8).mp3"
+  },
+  ilovepeople: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/8+II+-+i+love+people+(co-prod.+Trevor)+(mix+8).mp3"
+  },
+  ihatepeople: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/9+III+i+hate+people+(sunday+running)+(mix+1).mp3"
+  },
+  ilovemoney: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/10+IV+i+love+money+(mittle)+(mix+6)_Master.mp3"
+  },
+  Indecision: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/11+Indecision+(odr+fr_11)+(mix+7)_Master.mp3"
+  },
+  Pocketofbags: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/12+Pocket+of+bags+(mix+3).mp3"
+  },
+  Livinginafan: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/13+Living+in+a+fan+(mix+15).mp3"
+  },
 };
 
 player.src = sounds[membershipEl.value].url;
