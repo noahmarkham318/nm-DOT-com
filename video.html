@@ -1,83 +1,132 @@
 <head>
-  <title><video src=""></video></title>
+    <title>noah markham DOT com</title>
+    <link rel="icon" type="image/x-icon" href="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png">
     <style>
-      .body{
-        margin: 0%;
-      }
-        .creditsabsolute{
-             height: 100%;
-             width: 100%;
-             border-width: 6px; 
-             border-color: black;
-
-             display: flex;
-             justify-content: center;
-             align-items: center;
-
-             position: absolute;
-
-             cursor: pointer;
-       
-             font-family: 'Times New Roman', Times, serif;
-             color: transparent;
-             text-align: center;
-             background-color: rgba(255, 255, 255, 0); 
+        body{
+            background-color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0px;
+            
         }
-        .creditsabsolute:hover{
-             height: 100%;
-             width: 100%;
-             border-width: 6px;
-             border-color: black;
-
-             display: flex;
-             justify-content: space-evenly;
-             align-items: center;
-                
-             cursor: pointer;
-
-             font-family: 'Times New Roman', Times, serif;
-             color: rgb(0, 0, 0);
-             text-align: center;
-             background-color: rgba(255, 255, 255, 0.759); 
-             text-decoration: none;
-        } 
-        .creditstext{
-          font-family: 'Times New Roman', Times, serif;
-          font-size: 16px;
+/* Cover Art Containers */ 
+        .pageholder{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 1%;
+            z-index: -3;
         }
-        .title-text{
-        font-family: 'Times New Roman', Times, serif; 
-        font-size: 16px; 
-        margin-bottom: 12px; margin-top: 5%;
+        .coverholder{
+            width: 33%;
+            
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly; align-items: center;
+            row-gap: 1%;
+            text-decoration: none; color: #000000;
+            
+            text-align: center;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
         }
-        .video-container {
-             height: auto;
-             width: 31%;
-             aspect-ratio: 16/9; 
-
-             display: flex;
-             justify-content: center;
-             align-items: center;
-
-             position: relative;
-
-             cursor: pointer;
-       
-             color: transparent;
-             text-align: center;
-             background-color: rgba(255, 255, 255, 0);
-             margin: 1%;
+        .coverholder:hover{
+            text-decoration: underline; color: #1600ba;
+            
         }
-        .wholethangcontainer {
-            width: 100%;
+        .coverbtn{
+            width: 70%;
+            cursor: pointer;
+            
+            margin: 0%;
+            padding: 0%;
+            animation-name: coveronoff;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+        }
+        .coverbtnstill {
+            width: 70%;
+            cursor: pointer;
+            
+            margin: 0%;
+            padding: 0%;
             border-style: solid;
-            border-width: 1px; border-color: black;
-             display: flex; flex-wrap: wrap;
-             justify-content: space-evenly;
-             background-color: white;      
+            border-width: .3%; 
+            border-color: #000000;
         }
-
-
+        .cv2{
+            animation-duration: 13s;
+        }
+        .cv3{
+            animation-duration: 17s;
+        }
+        .backcoverbtn{
+            width: 70%;
+            cursor: pointer;
+            
+            margin: 0%;
+            padding: 0%;
+            animation-name: coveroffon;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+        }
+        .bcv2{
+            animation-duration: 13s;
+        }
+        .bcv3{
+            animation-duration: 17s;
+        }
+        @keyframes coveronoff {
+            0% {display: block;}
+            49% {display: none}
+            50% {display: none;}
+            99% {display: none;}
+            100% {display: block;}
+        }
+        @keyframes coveroffon {
+            0% {display: none;}
+            49% {display: none;}
+            50% {display: block;}
+            99% {display: none;}
+            100% {display: none;}
+        }
+/* Big Cover Containers */ 
+        .bigpiccontainer{
+            display: none;
+        }
+        .bigpiccontainerVISIBLE{
+            margin-top: 10px;
+            display: flex;
+            position: fixed;
+            height: 100%;
+            justify-content: space-evenly;
+            padding: 1%;
+            background-color: #dadada;
+          
+            z-index: 10;
+        }
+        .imghide{
+            display: none;
+        }
+        .imgshow{
+            display: flex;
+            justify-content: space-evenly;
+            cursor: pointer;
+        }
+        .storehide{
+            display: none;
+        }
+        .storeshow{
+            display: flex;
+            justify-content: space-evenly;
+            cursor: pointer;
+            width: 100%;
+        }
+        .bigcovers{
+            margin-bottom: auto; margin-top: auto;
+            width: 40%;
+            aspect-ratio: 1/1;
+        }
 /* Nav Bar */ 
     .navbar{
         width: 100%;
@@ -90,7 +139,7 @@
         animation-name: navbarshadow;
         animation-timeline: scroll(root);
         animation-range: 0px 200px;
-        z-index: 5;
+        z-index: 2;
 
     }
     
@@ -159,33 +208,167 @@
         text-decoration: underline;
         color: #1600ba;
     }
-
-
-
-
-
-
-
-
-
-
-
-        @media (max-width: 1200px) {
-            .video-container {width: 98%;}
-            .backbtn {font-size: 4vw;}
-            .navbarLINK, .navbar-dropdown {font-size: 3.5vw;}
-            .navbar-dropdown-link {padding: 10px 4px; font-size: 3.5vw;}
-            .title-text {margin-top: 10%; font-size: 3.5vw;}
+/* Stream Dropdown */
+        .dropdown{
+            position: relative;
+            display: block;
+            margin: auto;
+            width: fit-content;
+            text-align: center;
+            z-index: 2;
+        }
+        .stream-dropdown{
+            all: unset;
+            display: block;
+            margin-left: auto; margin-right: auto; margin-top: 10px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid black; border-radius: 5%;
+            text-align: center;
+            padding-top: 1%; padding-bottom: 1%; padding-right: 5%; padding-left: 5%;
+            font-size: 16px;
+            z-index: 2;
+        }
+        .dropdown-content {
+            display: none;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+        }
+        .dropdownLINK {
+            color: black;
+            padding: 4px 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdownLINK:hover {
+            background-color: #ffffff;
+            text-decoration: underline;
+            color: #1600ba;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
 
+/* Play Buttons */
+    .play-button, .forward-button, .back-button {
+            height: 32px;
+            width: 32px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border-color: black
 
+    }
+    .play-button:hover, .forward-button:hover, .back-button:hover {
+        transform: scale(.9);
+        border-color: #1600ba;
+        background-color: #1600ba;
+    } 
+    .playicon {
+        height: 0px;
+        width: 0px;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 9px solid white;
+        border-radius: 0px;
+        
+    }
+    .pauseicon {
+        height: 15px;
+        width: 15px;
+        background-color: transparent;
+        border-width: 0px 0px 0px 9px;
+        border-style: double;
+        border-color: white;
+        margin-left: 3.5px;
+    }
+    .playspeedicon{
+        height: 15px; width: 15px;
+        
+        font-family: 'Times New Roman', Times, serif;
+        color:white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    .playspeedicon:hover{
+        background-color: #1600ba;
+    }
+    .btnsrow{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        margin: auto;
+
+}
+    .btnscontainer{
+        width: 100%;
+        display: block;
+        margin-top: 4%;
+    }
+
+    .handshakedropdowncontainer{
+        margin-top: 4%;
+    }
+    .age25dropdowncontainer{
+        margin-top: 4%;
+        opacity: 0%;
+    }
+    .GEMdropdowncontainer{
+        margin-top: 4%;
+        opacity: 0%;
+    }
+/* Ecwid Button */
+        .btnholder{ 
+            width: fit-content;
+        }
+        .ecwid-btn,
+        .form-control__button {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border-radius: 0px !important;
+            font-family: 'Times New Roman', serif !important;  /* change to your font */
+            font-size: 14px !important;                    /* optional: change size */
+            font-weight: normal !important;                  /* optional: make text bold */
+            text-transform: lowercase !important;  /* optional: uppercase text */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center! important;
+        }
+/* Hover */
+        .ecsp .ecwid-btn:hover,
+        .ecsp .form-control__button:hover {
+            background-color: #c0c0c0 !important;
+        }
+/* Media Query For Mobile */
+        @media (max-width: 1200px) {
+            .coverholder {width: 90%; font-size: 3.5vw;}
+            .coverholder:hover{text-decoration: none; color: black;}
+            .coverbtn {width: 80%;}
+            .backcoverbtn {width: 80%;}
+            .backbtn {font-size: 4vw;}
+            .navbarLINK, .navbar-dropdown {font-size: 3.5vw;}
+            .navbar-dropdown-link {padding: 10px 4px; font-size: 3.5vw;}
+            .imgshow {display: none;}
+            .stream-dropdown {font-size: 3.5vw;}
+            .dropdownLINK {font-size: 3.5vw; padding: 10px 4px;}
+            .ecwid-btn {font-size: 2.5vw !important;}
+            .form-control__button {font-size: 2vw !important;}
+            .play-button {height: 64px; width: 64px;}
+            .playspeedicon {font-size: 3vw;}
+
+        }
     </style>
-
 </head>
 
 <body>
-  <!--Nav Bar-->
+<!--Nav Bar-->
     <div id="navbar" class="navbar">
         <a href="https://noahmarkham.com/" class="backbtn">back</a>
         <li class="navbarlist">
@@ -200,113 +383,377 @@
             <a class="navbarLINK" href="https://noahmarkham.com/shop">shop</a>
         </li>
     </div>
+    
+<!--Streaming Dropdown-->
+    <div class="dropdown">
+        <button class="stream-dropdown">stream</button>
+        <div class="dropdown-content">
+        <a class="dropdownLINK" href="https://music.apple.com/us/artist/noah-markham/1553834605" target="_blank">apple music</a>
+        <a class="dropdownLINK" href="https://open.spotify.com/artist/1JcqOc8cUn2u64XBOBkiKm" target="_blank">spotify</a>
+        <a class="dropdownLINK" href="https://music.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">yt music</a>
+        <a class="dropdownLINK" href="https://music.amazon.in/artists/B08WX6WMG3/noah-markham" target="_blank">amazon</a>
+        <a class="dropdownLINK" href="https://tidal.com/artist/36688543" target="_blank">tidal</a>
+        <a class="dropdownLINK" href="https://www.deezer.com/us/artist/67600882?host=0&deferredFl=1" target="_blank">deezer</a>
+        </div>
+    </div>
+
+<!--Big Covers-->
+    <div id="bpcontainer" class="bigpiccontainer">
+    <div id="HScovers" class="imghide">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/COVER+6.png" alt="handshake cover" class="bigcovers">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/alt+back+cover+5.png" alt="handshake cover" class="bigcovers">
+    </div>
+    <div id="GEMcovers" class="imghide">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Grimes+%26+Elon+Musk+Cover+Art+Mockup+7.png" alt="GEM cover" class="bigcovers">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/G+%26+EM+1_2.png" alt="GEM back cover" class="bigcovers">
+    </div>  
+
+    <div id="age25covers" class="imghide">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/smashmouth+(contrast+%2B+hue+%2Blil+less+saturation).png" alt="age25 cover" class="bigcovers">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/attempt+@+age+alt.png" alt="age25 back cover" class="bigcovers">
+    </div>
+    </div>
+
+     
+
+<div class="pageholder">
+<!--Handshake-->
+    <div class="coverholder">
+        <p>Handshake<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
+        <img id="HScoverbtn" class="coverbtn" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/COVER+6.png" alt="Handshake Cover">
+        <img id="HSbackcoverbtn" class="backcoverbtn" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/alt+back+cover+5.png" alt="Handshake Back Cover">
+
+<!--Handshake Dropdown-->
+<div class="handshakedropdowncontainer">
+    <div class="selector">
+    <label for="membership">Choose a song:</label>
+        <select name="membership" id="membership">
+            <option value="FAWKMONEY" selected>1. #FAWKMONEY</option>
+            <option value="GAWK">2. GAWK</option>
+            <option value="afterleftgone">3. after left gone</option>
+            <option value="asitgrowsitgets">4. as it grows it gets</option>
+            <option value="Callmecrazy">5. Call me crazy don't shout</option>
+            <option value="FM">6. FM</option>
+            <option value="ihatemoney">7. i hate money</option>
+            <option value="ilovepeople">8. II: i love people (co-prod by Trevor McFarland)</option>
+            <option value="ihatepeople">9. III: i hate people</option>
+            <option value="ilovemoney">10. IV: i love money</option>
+            <option value="Indecision">11. Indecision</option>
+            <option value="Pocketofbags">12. Pocket of bags</option>
+            <option value="Livinginafan">13. Living in a fan</option>
+            
+    </select>
+    </div>
+</div>
+
+<!--Play Buttons-->
+    <audio id="player"></audio>
+    <div class="btnscontainer">
+        <!--Buttons Row 1-->
+         <div class="btnsrow">
+            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
+            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
+            <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
+            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
+            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
+            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
+        </div>
+    </div>
+<!--Ecwid Button-->
+        <div class="btnholder">
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
+        </div>
+    </div>
+
+    
+<!--Grimes & Elon Musk-->
+   <div class="coverholder">
+        <p class="textholder">Grimes & Elon Musk<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
+        <img id="GEMcoverbtn" class="coverbtn cv2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Grimes+%26+Elon+Musk+Cover+Art+Mockup+7.png" alt="Handshake Cover">
+        <img id="GEMbackcoverbtn" class="backcoverbtn bcv2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/G+%26+EM+1_2.png" alt="Handshake Back Cover">
+<!--Dropdown (SPACEFILLER)-->
+<div class="GEMdropdowncontainer">
+    <div class="selector">
+    <label for="membership">Choose a song:</label>
+        <select name="membership" id="">
+            <option value="attempt@age25" selected>Grimes &amp; Elon Musk</option>
+    </select>
+    </div>
+</div>
+<!--Play Buttons-->
+    <audio id=""></audio>
+    <div class="btnscontainer">
+        <!--Buttons Row 1-->
+         <div class="btnsrow">
+            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
+            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
+            <button class="play-button" id=""><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id=""></div></button>
+            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
+            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
+            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
+        </div> 
+    </div>
+        <div class="btnholder">
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
+        </div>
+    </div>
+
+
+<!--attempt @ age 25-->
+    <div class="coverholder">
+        <p class="textholder">attempt @ age 25<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
+        <img id="age25coverbtn" class="coverbtn cv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/smashmouth+(contrast+%2B+hue+%2Blil+less+saturation).png" alt="Handshake Cover">
+        <img id="age25backcoverbtn" class="backcoverbtn bcv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/attempt+@+age+alt.png" alt="Handshake Back Cover">
+<!--attempt @ age 25 Dropdown-->
+<div class="age25dropdowncontainer">
+    <div class="selector">
+    <label for="membership">Choose a song:</label>
+        <select name="membership" id="">
+            <option value="FAWKMONEY" selected>attempt @ age 25</option>
+    </select>
+    </div>
+</div>
+<!--Play Buttons-->
+    <audio id=""></audio>
+    <div class="btnscontainer">
+        <!--Buttons Row 1-->
+         <div class="btnsrow">
+            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
+            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
+            <button class="play-button" id=""><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id=""></div></button>
+            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
+            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
+            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
+        </div>
+    </div>
+        <div class="btnholder">
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
+        </div>
+    </div>
+<!--Produciton Credits-->
+    <a href="https://www.youtube.com/@GRINDINGINTHISHAUS" target="_blank" class="coverholder">
+        <p class="textholder">Production Credits<br><span style="font-size: 75%; font-style: italic;">work from 2019-2023 when i thought of myself solely as a producer</span></p>
+        <video autoplay loop muted playsinline id="prodcredits" class="coverbtnstill" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Prod+Animation+GLITCH.mp4" alt="Handshake Cover">
+        <div class="btnholder">
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
+        </div>
+</div>    
+    </a>
+
+<script>
 
 
 
 
-  <p class="title-text">Handshake</p>
-  <div class="wholethangcontainer">
-    <!--Pocket of bags-->
-    <a href="https://youtu.be/QnVfng7vgZI?si=8iOuSFmF9U0wIB18" class="video-container" target="_blank">     
-         <iframe width="100%" height="100%" style="position: absolute; z-index: 1;" src="https://www.youtube.com/embed/QnVfng7vgZI?si=8iOuSFmF9U0wIB18&amp;controls=0&amp;mute=1&amp;autoplay=1&amp;showinfo=0&amp;autohide=1&amp;playlist=QnVfng7vgZI&amp;loop=1" 
-           title="YouTube video player" 
-           frameborder="0" 
-           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" 
-           referrerpolicy="strict-origin-when-cross-origin" 
-           allowfullscreen></iframe>                        
-         <button class="creditsabsolute" style="z-index: 2;">
-           <p class="creditstext"><strong> "Pocket of Bags" <br></strong>
-            <span style="font-size: 50%;"><br></span>
-            <span style="font-size: 75%;">shot &amp; edited by me</span><br>
-           </p>
-    </button>
-    </a>
-    <!--Call me crazy dont shout-->
-    <a href="https://youtu.be/GvraOtwlDpw?si=NIPfWgtkIJO6Glap" class="video-container" target="_blank">     
-         <iframe width="100%" height="100%" style="position: absolute; z-index: 1;" src="https://www.youtube.com/embed/GvraOtwlDpw?si=NIPfWgtkIJO6Glap&amp;controls=0&amp;mute=1&amp;autoplay=1&amp;showinfo=0&amp;autohide=1&amp;playlist=GvraOtwlDpw&amp;loop=1" 
-           title="YouTube video player" 
-           frameborder="0" 
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-           referrerpolicy="strict-origin-when-cross-origin" 
-           allowfullscreen></iframe>                        
-         <button class="creditsabsolute" style="z-index: 2;">
-            <p class="creditstext"><strong> "Call me crazy don't shout" <br></strong>
-              <span style="font-size: 50%;"><br></span>
-              <span style="font-size: 75%;">shot &amp; edited by me</span> <br>
-            </p>
-    </button>
-    </a>
-    <!--IV: i love money-->
-    <a href="https://youtu.be/frQxJeRLnfs?si=ooH5eHruMccLtRiF" class="video-container" target="_blank">     
-         <iframe width="100%" height="100%" style="position: absolute; z-index: 1;" src="https://www.youtube.com/embed/frQxJeRLnfs?si=ooH5eHruMccLtRiF&amp;controls=0&amp;mute=1&amp;autoplay=1&amp;showinfo=0&amp;autohide=1&amp;playlist=frQxJeRLnfs&amp;loop=1" 
-           title="YouTube video player" 
-           frameborder="0" 
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-           referrerpolicy="strict-origin-when-cross-origin" 
-           allowfullscreen></iframe>                        
-         <button class="creditsabsolute" style="z-index: 2;">
-           <p class="creditstext"><strong> "IV: i love money" <br></strong>
-            <span style="font-size: 50%;"><br></span>
-            <span style="font-size: 75%;">shot &amp; edited by me</span> <br>
-            <span style="font-size: 50%;"><br></span>
-            <span style="font-size: 60%;">starring</span> <br>
-            <span style="font-size: 75%">T<br>Neiman<br>Maya Evans</span>
-           </p>
-    </button>
-    </a>
-    <!--Job Interview-->
-    <a href="https://youtu.be/CfZYlapnCrM?si=9KemcZ1Yfalmhvfo" class="video-container" target="_blank">     
-         <iframe width="100%" height="100%" style="position: absolute; z-index: 1;" src="https://www.youtube.com/embed/CfZYlapnCrM?si=jMbT8ztPmOUTgggl&amp;controls=0&amp;mute=1&amp;autoplay=1&amp;showinfo=0&amp;autohide=1&amp;playlist=CfZYlapnCrM&amp;loop=1" 
-           title="YouTube video player" 
-           frameborder="0" 
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-           referrerpolicy="strict-origin-when-cross-origin" 
-           allowfullscreen></iframe>                        
-         <button class="creditsabsolute" style="z-index: 2;">
-           <p class="creditstext"><strong> "Job Interview" <br></strong>
-           <span style="font-size: 50%;"><br></span>
-           <span style="font-size: 75%;">shot &amp; edited by me</span> <br>
-           <span style="font-size: 50%;"><br></span>
-           <span style="font-size: 60%">starring</span> <br>
-           <span style="font-size: 75%">Deidre Harp / Mom</span>
-           </p>
-    </button>
-    </a>
-    <!--Indecision-->
-    <a href="https://youtu.be/S-R2om5zlt0?si=5cQ_F-NOBjwxuswf" class="video-container" target="_blank">     
-         <iframe width="100%" height="100%" style="position: absolute; z-index: 1;" src="https://www.youtube.com/embed/S-R2om5zlt0?si=O6_YLXoZqQL6D07sP&amp;controls=0&amp;mute=1&amp;autoplay=1&amp;showinfo=0&amp;autohide=1&amp;playlist=S-R2om5zlt0&amp;loop=1" 
-           title="YouTube video player" 
-           frameborder="0" 
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-           referrerpolicy="strict-origin-when-cross-origin" 
-           allowfullscreen></iframe>                        
-         <button class="creditsabsolute" style="z-index: 2;">
-           <p class="creditstext"><strong> "Indecision" <br></strong>
-           <span style="font-size: 50%px;"><br></span>
-           <span style="font-size: 75%px;">shot by Max Gonzalez / edited by me</span> <br>
-           <span style="font-size: 50%;"><br></span>
-           <span style="font-size: 60%">starring</span> <br>
-           <span style="font-size: 75%">Jasmine Talhouk <br> Murilo Oliveira </span>
-           </p>
-    </button>
-    </a>
-    <!--imadeawebsite-->
-    <a href="https://youtu.be/1SaOY8SOCYY?si=EvMFSNOkYxmwlhtP" class="video-container" target="_blank">     
-         <iframe width="100%" height="100%" style="position: absolute; z-index: 1;" src="https://www.youtube.com/embed/1SaOY8SOCYY?si=EvMFSNOkYxmwlhtP&amp;controls=0&amp;mute=1&amp;autoplay=1&amp;showinfo=0&amp;autohide=1&amp;playlist=1SaOY8SOCYY&amp;loop=1" 
-           title="YouTube video player" 
-           frameborder="0" 
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-           referrerpolicy="strict-origin-when-cross-origin" 
-           allowfullscreen></iframe>                        
-         <button class="creditsabsolute" style="z-index: 2;">
-           <p class="creditstext"><strong> "imadeawebsite" <br></strong>
-           <span style="font-size: 50%;"><br></span>
-           <span style="font-size: 75%;">shot &amp; edited by me</span> <br>
-           <span style="font-size: 50%;"><br></span>
-           <span style="font-size: 60%">starring</span> <br>
-           <span style="font-size: 75%">Nico Cava<br>Trace Phoenix<br>Neiman</span>
-           </p>
-    </button>
-    </a>
- </div>
+//Full Size Cover Art
+var bpcontainer = document.getElementById("bpcontainer");
+
+var HScovers = document.getElementById("HScovers");
+var GEMcovers = document.getElementById("GEMcovers");
+var age25covers = document.getElementById("age25covers");
+
+    //Handshake
+document.getElementById("HScoverbtn").addEventListener("click", HSexpand)
+document.getElementById("HSbackcoverbtn").addEventListener("click", HSexpand)
+function HSexpand() {
+        {if (GEMcovers.classList.contains("imgshow")) {
+            GEMcovers.classList.remove("imgshow")}
+            GEMcovers.classList.add("imghide")}
+        {if (age25covers.classList.contains("imgshow")) {
+            age25covers.classList.remove("imgshow")}
+            age25covers.classList.add("imghide")}
+        HScovers.classList.toggle("imgshow")
+        HScovers.classList.remove("imghide")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");}
+    //G & EM
+document.getElementById("GEMcoverbtn").addEventListener("click", GEMexpand)
+document.getElementById("GEMbackcoverbtn").addEventListener("click", GEMexpand)
+function GEMexpand() {
+        {if (HScovers.classList.contains("imgshow")) {
+            HScovers.classList.remove("imgshow")}
+            HScovers.classList.add("imghide")}
+        {if (age25covers.classList.contains("imgshow")) {
+            age25covers.classList.remove("imgshow")}
+            age25covers.classList.add("imghide")}
+        GEMcovers.classList.toggle("imgshow")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");} 
+
+    //attempt @ age 25
+document.getElementById("age25coverbtn").addEventListener("click", age25expand)
+document.getElementById("age25backcoverbtn").addEventListener("click", age25expand)
+function age25expand() {
+        {if (HScovers.classList.contains("imgshow")) {
+            HScovers.classList.remove("imgshow")}
+            HScovers.classList.add("imghide")}
+        {if (GEMcovers.classList.contains("imgshow")) {
+            GEMcovers.classList.remove("imgshow")}
+            GEMcovers.classList.add("imghide")}
+        age25covers.classList.toggle("imgshow")
+        bpcontainer.classList.toggle("bigpiccontainerVISIBLE");}
+
+//Reset to normal size
+    //Handshake
+document.getElementById("HScovers").addEventListener("click", HSexpand);
+    //G & EM
+document.getElementById("GEMcovers").addEventListener("click", GEMexpand);
+    //attempt @ age 25
+document.getElementById("age25covers").addEventListener("click", age25expand);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Tracks
+
+
+
+
+
+//Play Pause Icon Toggle
+let iconswitch = document.getElementById("playicon");
+let player = document.getElementById("player");
+
+
+function playpause() {   
+    if (iconswitch.classList.contains("playicon")) {
+        iconswitch.classList.remove("playicon");
+        iconswitch.classList.add("pauseicon");
+    }
+    else {
+        iconswitch.classList.remove("pauseicon");
+        iconswitch.classList.add("playicon");
+    }  
+};
+
+player.addEventListener("ended", playpause);
+
+//Play Pause Toggle
+function togglePlay() {
+   return player.paused ? player.play() : player.pause();
+};
+
+//Playspeed
+
+function halfspeed() {
+   player.playbackRate = 0.5;
+   player.preservesPitch = false;
+};
+function threequartspeed() {
+   player.playbackRate = 0.75;
+   player.preservesPitch = false;
+};
+function normalspeed() {
+   player.playbackRate = 1;
+   player.preservesPitch = false;
+};
+function onepointfivespeed() {
+   player.playbackRate = 1.5;
+   player.preservesPitch = false;
+};
+function twicespeed() {
+   player.playbackRate = 2;
+   player.preservesPitch = false; 
+};
+
+
+//Start From Beginning
+function startover(){
+    player.currentTime = 0
+}
+
+document.getElementById("startoverbtn").addEventListener("click", startover)
+
+
+//Next & Back Buttons
+const membershipEl = document.getElementById("membership");
+
+
+//Handshake Dropdown
+const sounds = {
+  FAWKMONEY: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/1+%23FAWKMONEY.mp3"
+  },
+  GAWK: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/2+GAWK+(ft.+Camp+Circadia).mp3"
+  },
+  afterleftgone: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/3+after+left+gone.mp3"
+  },
+  asitgrowsitgets: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/4+as+it+grows+it+gets+(new+mix+III).mp3"
+  },
+  Callmecrazy: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/5+call+me+crazy+dont+shout+(mix+8).mp3"
+  },
+  FM: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/6+FM+(mix+2).mp3"
+  },
+  ihatemoney: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/7+I+i+hate+money+(mix+8).mp3"
+  },
+  ilovepeople: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/8+II+-+i+love+people+(co-prod.+Trevor)+(mix+8).mp3"
+  },
+  ihatepeople: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/9+III+i+hate+people+(sunday+running)+(mix+1).mp3"
+  },
+  ilovemoney: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/10+IV+i+love+money+(mittle)+(mix+6)_Master.mp3"
+  },
+  Indecision: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/11+Indecision+(odr+fr_11)+(mix+7)_Master.mp3"
+  },
+  Pocketofbags: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/12+Pocket+of+bags+(mix+3).mp3"
+  },
+  Livinginafan: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/13+Living+in+a+fan+(mix+15).mp3"
+  },
+};
+
+player.src = sounds[membershipEl.value].url;
+
+membershipEl.addEventListener("change", (e) => {
+    player.src = sounds[e.target.value].url; 
+    iconswitch.classList.remove("pauseicon");
+    iconswitch.classList.add("playicon");
+});
+
+
+
+
+
+
+</script>
 </body>
+
