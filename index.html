@@ -98,7 +98,7 @@
             display: none;
         }
         .bigpiccontainerVISIBLE{
-            margin-top: 10px;
+            margin-top: 9px;
             display: flex;
             position: fixed;
             height: 100%;
@@ -126,7 +126,7 @@
             width: 100%;
         }
         .bigcovers{
-            margin-bottom: auto; margin-top: auto;
+            margin-bottom: 10%; margin-top: 10%;
             width: 40%;
             aspect-ratio: 1/1;
         }
@@ -150,12 +150,6 @@
         0% {box-shadow: 0px 0px 0px;}
         100% {box-shadow: 0px 0px 10px;}
     }
-
-    @keyframes navbarshadoweffect {
-        from {box-shadow: 0px 0px 10px;}
-        to {box-shadow: 0px 0px 10px;}
-    }  
-
     
     .navbarlist {
         float: right;
@@ -316,18 +310,21 @@
         position: relative;
         left: 50%; transform: translate(-50%);
         margin-top: 2%;
-        border-style: solid;
+        border-style: solid; border-width: 1px; border-color: black;
     }
 
 /* Song Selector */
     .handshakedropdowncontainer{
         margin-top: 1%;
-        position: relative; 
-        left: 50%; transform: translate(-50%);
+        position: fixed; 
+        left: 50%; transform: translate(-50%); top: 80%;
         text-align: center;
-        border-style: solid;
+        border-style: solid; border-width: 1px; border-color: black;
         padding: .5%;
         width: fit-content;
+        z-index: 4;
+        background-color: white;
+        box-shadow: 0px 0px 5px;
     }
     .age25dropdowncontainer{
         margin-top: 4%;
@@ -375,7 +372,7 @@
             .form-control__button {font-size: 2vw !important;}
             .play-button {height: 64px; width: 64px;}
             .playspeedicon {font-size: 3vw;}
-            .btnscontainer {margin-top: 3%;}
+            .btnscontainer {margin-top: 3%; padding: 0%; border-style: none;}
             .handshakedropdowncontainer {margin-top: 3%;}
 
         }
@@ -451,7 +448,11 @@
             <option value="Indecision">11. Indecision</option>
             <option value="Pocketofbags">12. Pocket of bags</option>
             <option value="Livinginafan">13. Living in a fan</option> 
+            <option value="GEM">(single) Grimes &amp; Elon Musk</option>
+            <option value="age25">(single) attempt @ age 25</option>
+            <option value="ayatht">(single) are you at the house today?</option>
         </select>
+        
     </div>
     <!--Play Buttons-->
     <audio id="player"></audio>
@@ -691,6 +692,15 @@ const sounds = {
   },
   Livinginafan: {
     url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Handshake/13+Living+in+a+fan+(mix+15).mp3"
+  },
+  GEM: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/Grimes+%26+Elon+Musk+(2.0)+(Mix+8).mp3"
+  },
+  age25: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/attempt+at+age+25+(mix+2+%2B+MASTER).mp3"
+  },
+  ayatht: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Audio+Files/are+you+at+the+house+today_4+(mix+8)+(w+roswell)_Master.mp3"
   },
 };
 
