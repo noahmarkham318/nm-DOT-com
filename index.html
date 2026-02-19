@@ -353,15 +353,19 @@
         opacity: 0%;
     }
     .songselector{
-        all: ;
         color: black;
         text-align: left;
         width: fit-content;
         border: 100%; border-radius: 3%;
         background-color: #ffffff;
         border-width: 1px; border-style: solid; border-color: black;
-        font-family: 'Times New Roman', Times, serif; padding: 3px;
+        font-family: 'Times New Roman', Times, serif; font-size: 14px;
+        padding: 3px;
         animation-name: colorswitch; animation-duration: 6s; animation-timing-function: linear; animation-iteration-count: infinite;
+    }
+    .songselectorlabel{
+        color: black;
+        font-family: 'Times New Roman', Times, serif; font-size: 16px;
     }
 
 /* Ecwid Button */
@@ -405,6 +409,8 @@
             .playspeedicon {font-size: 3vw;}
             .btnscontainer {margin-top: 3%; padding: 0%; border-style: none;}
             .handshakedropdowncontainer {margin-top: 3%;}
+            .songselector {font-size: 3vw;}
+            .songselectorlabel {font-size: 2.5vw;}
 
         }
     </style>
@@ -464,7 +470,7 @@
 <!--Song Selector-->
 <div class="handshakedropdowncontainer">
     <div class="selector">
-    <label for="membership">Choose a song:</label>
+    <label class="songselectorlabel" for="membership">Choose a song:</label>
         <select class="songselector" name="membership" id="membership">
             <option value="FAWKMONEY" selected>1. #FAWKMONEY</option>
             <option value="GAWK">2. GAWK (ft. Camp Circadia)</option>
