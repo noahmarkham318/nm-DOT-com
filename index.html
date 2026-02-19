@@ -213,12 +213,13 @@
     }
 /* Stream Dropdown */
         .dropdown{
-            position: relative;
             display: block;
-            margin: auto;
+            position: relative;
+            left: 50%; transform: translate(-50%);
             width: fit-content;
             text-align: center;
             z-index: 2;
+            margin: 0%;
         }
         .stream-dropdown{
             all: unset;
@@ -228,7 +229,7 @@
             background-color: #f0f0f0;
             border: 1px solid black; border-radius: 5%;
             text-align: center;
-            padding-top: 1%; padding-bottom: 1%; padding-right: 5%; padding-left: 5%;
+            padding-top: 1%; padding-bottom: 1%; padding-right: 10%; padding-left: 10%;
             font-size: 16px;
             z-index: 2;
         }
@@ -261,6 +262,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
             text-decoration: none;
             border-color: black
 
@@ -306,20 +308,26 @@
         display: flex;
         justify-content: center;
         position: relative;
-        width: 100%;
-        margin: auto;
+        left: 50%; transform: translate(-50%);
     }
     .btnscontainer{
-        width: 100%;
+        width: fit-content; padding: 1%;
         display: block;
-        margin-top: 1%;
+        position: relative;
+        left: 50%; transform: translate(-50%);
+        margin-top: 2%;
+        border-style: solid;
     }
 
 /* Song Selector */
     .handshakedropdowncontainer{
         margin-top: 1%;
         position: relative; 
+        left: 50%; transform: translate(-50%);
         text-align: center;
+        border-style: solid;
+        padding: .5%;
+        width: fit-content;
     }
     .age25dropdowncontainer{
         margin-top: 4%;
@@ -390,7 +398,7 @@
             <a class="navbarLINK" href="https://noahmarkham.com/shop">shop</a>
         </li>
     </div>
-    
+
 <!--Streaming Dropdown-->
     <div class="dropdown">
         <button class="stream-dropdown">stream</button>
@@ -425,7 +433,7 @@
     </div>
     </div>
 
-    <!--Handshake Dropdown-->
+<!--Song Selector-->
 <div class="handshakedropdowncontainer">
     <div class="selector">
     <label for="membership">Choose a song:</label>
@@ -445,8 +453,7 @@
             <option value="Livinginafan">13. Living in a fan</option> 
         </select>
     </div>
-</div>
-<!--Play Buttons-->
+    <!--Play Buttons-->
     <audio id="player"></audio>
     <div class="btnscontainer">
          <div class="btnsrow">
@@ -459,6 +466,7 @@
             <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
         </div>
     </div>
+</div>
 
 <div class="pageholder">
 <!--(R1 A)Handshake-->
@@ -478,28 +486,6 @@
         <p class="textholder">Grimes & Elon Musk<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
         <img id="GEMcoverbtn" class="coverbtn cv2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Grimes+%26+Elon+Musk+Cover+Art+Mockup+7.png" alt="Handshake Cover">
         <img id="GEMbackcoverbtn" class="backcoverbtn bcv2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/G+%26+EM+1_2.png" alt="Handshake Back Cover">
-<!--SPACEFILLER-->
-<div class="GEMdropdowncontainer">
-    <div class="selector">
-    <label for="membership">Choose a song:</label>
-        <select name="membership" id="">
-            <option value="attempt@age25" selected>Grimes &amp; Elon Musk</option>
-    </select>
-    </div>
-</div>
-<!--Play Buttons-->
-    <audio id=""></audio>
-    <div class="btnscontainer">
-         <div class="btnsrow">
-            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
-            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
-            <button class="play-button" id=""><div class="playspeedicon">&lt;</div></button>
-            <button class="play-button" id="" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id=""></div></button>
-            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
-            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
-            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
-        </div> 
-    </div>
 <!--Ecwid Button-->
         <div class="btnholder">
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-817213144" itemtype="http://schema.org/Product" data-single-product-id="817213144"><div class="ecsp-title" itemprop="name" style="display:none;" content="Grimes &#x0026; Elon Musk"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
@@ -511,28 +497,6 @@
         <p class="textholder">attempt @ age 25<br><span style="font-size: 75%; font-style: italic;">written, performed, produced, & engineered by noah markham</span></p>
         <img id="age25coverbtn" class="coverbtn cv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/smashmouth+(contrast+%2B+hue+%2Blil+less+saturation).png" alt="Handshake Cover">
         <img id="age25backcoverbtn" class="backcoverbtn bcv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/attempt+@+age+alt.png" alt="Handshake Back Cover">
-<!--SPACE FILLER-->
-<div class="age25dropdowncontainer">
-    <div class="selector">
-    <label for="membership">Choose a song:</label>
-        <select name="membership" id="">
-            <option value="FAWKMONEY" selected>attempt @ age 25</option>
-    </select>
-    </div>
-</div>
-<!--Play Buttons-->
-    <audio id=""></audio>
-    <div class="btnscontainer">
-         <div class="btnsrow">
-            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
-            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
-            <button class="play-button" id=""><div class="playspeedicon">&lt;</div></button>
-            <button class="play-button" id="" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id=""></div></button>
-            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
-            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
-            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
-        </div>
-    </div>
 <!--Ecwid Button-->
         <div class="btnholder">
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-817245540" itemtype="http://schema.org/Product" data-single-product-id="817245540"><div class="ecsp-title" itemprop="name" style="display:none;" content="attempt @ age 25"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
@@ -544,28 +508,6 @@
         <p class="textholder">are you at the house today? <span style="font-size: 90%;">(ft rozzygrace.)</span><br><span style="font-size: 75%;"><i>written, performed, produced, & engineered by noah markham</i></span></p>
         <img id="ayathtcoverbtn" class="coverbtn cv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Cover+Art/are+you+at+the+house+today+(front).png" alt="Handshake Cover">
         <img id="ayathtbackcoverbtn" class="backcoverbtn bcv3" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Cover+Art/are+you+at+the+house+today+(back).png" alt="Handshake Back Cover">
-<!--SPACE FILLER-->
-<div class="age25dropdowncontainer">
-    <div class="selector">
-    <label for="membership">Choose a song:</label>
-        <select name="membership" id="">
-            <option value="FAWKMONEY" selected>attempt @ age 25</option>
-    </select>
-    </div>
-</div>
-<!--Play Buttons-->
-    <audio id=""></audio>
-    <div class="btnscontainer">
-         <div class="btnsrow">
-            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
-            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
-            <button class="play-button" id=""><div class="playspeedicon">&lt;</div></button>
-            <button class="play-button" id="" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id=""></div></button>
-            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
-            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
-            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
-        </div>
-    </div>
 <!--Ecwid Button-->
         <div class="btnholder">
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-817204370" itemtype="http://schema.org/Product" data-single-product-id="817204370"><div class="ecsp-title" itemprop="name" style="display:none;" content="are you at the house today?"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
@@ -580,27 +522,6 @@
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
         </div>
 <!--SPACE FILLER-->
-<div class="age25dropdowncontainer">
-    <div class="selector">
-    <label for="membership">Choose a song:</label>
-        <select name="membership" id="">
-            <option value="FAWKMONEY" selected>attempt @ age 25</option>
-    </select>
-    </div>
-</div>
-<!--SPACE FILLER-->
-    <audio id=""></audio>
-    <div class="btnscontainer">
-         <div class="btnsrow">
-            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
-            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
-            <button class="play-button" id=""><div class="playspeedicon">&lt;</div></button>
-            <button class="play-button" id="" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id=""></div></button>
-            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
-            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
-            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
-        </div>
-    </div>
         <div class="btnholder">
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-804265516" itemtype="http://schema.org/Product" data-single-product-id="804265516"><div class="ecsp-title" itemprop="name" style="display:none;" content="Handshake"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
         </div>
