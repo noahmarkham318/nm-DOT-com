@@ -1,0 +1,347 @@
+<head>
+    <title>photo</title>
+    <link rel="icon" type="image/x-icon" href="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png">
+    <style>
+        body{
+            cursor: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Crosshari+Cursor+copy.png"), default;
+            margin: 0%;
+            padding: 0%;
+            height: 1800px;
+        }
+        .container{
+            position: relative;
+            left: 50%; transform: translateX(-50%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-left: 0%; margin-right: 0%; margin-top: 0%; margin-bottom: 10px; 
+            padding: 0%;
+            /*border-style: solid; border-color: black; border-width: 1px;*/
+
+            width: 90%;
+        }
+        .slideshow {
+            width: 13%;
+            object-fit: contain;
+            margin: -.5%;
+        }
+        .video{
+            width: 13%;
+            margin: -.5%;
+        }
+        .headertxt{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin-left: 5%; margin-top: 4%;
+        }
+
+        /* Nav Bar */ 
+    .navbar{
+        width: 100%;
+        height: fit-content;
+        border-style: none;
+        background-color: white;
+        position: fixed; top: 0%; left: 0%;
+        box-shadow: 0px 0px 0px;
+        list-style-type: none;
+        animation-name: navbarshadow;
+        animation-timeline: scroll(root);
+        animation-range: 0px 200px;
+        z-index: 5;
+
+    }
+    @keyframes navbarshadow{
+        0% {box-shadow: 0px 0px 0px;}
+        100% {box-shadow: 0px 0px 10px;}
+    }
+    @keyframes navbarshadoweffect {
+        from {box-shadow: 0px 0px 10px;}
+        to {box-shadow: 0px 0px 10px;}
+    }  
+    .navbarlist {
+        float: right;
+    }
+    .navbarLINK, .navbar-dropdown{
+        display: block;
+        color: #000000; background-color: white;
+        cursor: pointer;
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 18px; font-family: 'Times New Roman', Times, serif;
+        border-style: none; border-width: 0px;
+    }
+    .navbarLINK:hover{
+        text-decoration: underline;
+        color: #1600ba;
+        
+    }
+    .navbar-dropdown-content{    
+        position: absolute;
+        width: 100%;
+        height: fit-content;
+        display: none;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    }
+    .navbar-dropdown-link{
+        color: black;
+            padding: 4px 4px;
+            text-decoration: none;
+            display: block;
+    }
+    .navbar-dropdown-link:hover, .navbar-dropdown:hover {
+            background-color: #ffffff;
+            text-decoration: underline;
+            color: #1600ba;
+        }
+        .navbarlist:hover .navbar-dropdown-content {
+            display: block;
+        }
+/* Back Button */
+    .backbtn{
+        position: fixed; top: 10px; left: 10px;
+        text-decoration: none; 
+        color: #000000;
+        font-size: 18px;
+        z-index: 3;
+    }
+    .backbtn:hover{
+        text-decoration: underline;
+        color: #1600ba;
+    }
+
+        @media (max-width: 1200px) {
+            .video {width: 34%;}
+            .slideshow {width: 34%;}
+
+            .backbtn {font-size: 4vw;}
+            .navbarLINK, .navbar-dropdown {font-size: 4vw;}
+            .navbar-dropdown-link {padding: 10px 4px; font-size: 4vw;}
+        }
+    </style>
+</head>
+    
+<body>
+<!--Nav Bar-->
+    <div id="navbar" class="navbar">
+        <a href="https://noahmarkham.com/" class="backbtn">back</a>
+        <li class="navbarlist">
+            <button class="navbarLINK">gallery</button>
+                <div class="navbar-dropdown-content">
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/">music</a>
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/video">video</a>
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/photo">photo</a>
+                </div>
+        </li>
+        <li class="navbarLIST">
+            <a class="navbarLINK" href="https://noahmarkham.com/shop">shop</a>
+        </li>
+    </div>
+
+
+
+
+
+<!--2024-->
+    <p class="headertxt">2024</p>
+    <div class="container">
+        
+        <img id="smilefestpic" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/IMG_2104.JPG" class="slideshow">
+        <video id="lamb13tvscreen" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/Lamb13+TV+SCreen.mp4" class="video" autoplay loop muted playsinline></video>
+        
+        <video id="lamb13videoshoot2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/lamb13+video+shoot+2.mp4" class="video" autoplay loop muted playsinline></video>
+        
+        <video id="nothbasssmilefest" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/nothbass+(smilefest).mp4" class="video" autoplay loop muted playsinline></video>
+        <video id="smilefestclips" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/smilefest+clips.mp4" class="video" autoplay loop muted playsinline></video>
+        <video id="lamb13videoshoot" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/lamb13+video+shoot.mp4" class="video" autoplay loop muted playsinline></video>
+
+        <video id="ugaclips" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/uga+clip+1.mp4" class="video" autoplay loop muted playsinline></video>
+        <video id="ugaclips2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/uga+clip+2+(bogart).mp4" class="video" autoplay loop muted playsinline></video>
+        <img id="jacklynpic" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/2024/lamb13_edit_1.jpg" class="slideshow">
+
+    </div>
+
+<!--Archive-->
+    <p class="headertxt">archive</p>
+    <div class="container">
+        <img name="archiveslideshow1" class="slideshow">
+        <img name="archiveslideshow2" class="slideshow">
+        
+        <video id="Montage" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/Archive+Montage+II.mp4"></video>
+        
+        <video id="nico_adlibs" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/Nico+Adlibs.mov"></video>
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Misc+Pictures/IMG_2820.JPG" class="slideshow">
+        <video id="Jonas" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/Jonas+hitting+that+shit.mov"></video>
+        <video id="Old_show2" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/Old+Show+2.mov"></video>
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Misc+Pictures/Noahs4thBday_0002.png" class="slideshow">
+        <video id="Old_show" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/Old+Show.mov"></video>
+        <img name="archiveslideshow5" class="slideshow">
+        <video id="Tsynth" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/T+synth.mov"></video>
+        
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Misc+Pictures/D4125DF1-0B78-4BD1-987B-8B22140E4943.JPG" class="slideshow">
+        <video id="camel_stand" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/camel+stand.mov"></video>
+        <video id="timelapse" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/grind+timelapse.mov"></video>
+        <video id="colorado_couch" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/colorado+couch.mov"></video>
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Misc+Pictures/0E2A5D6F-0A8E-41BA-98EF-FAC3E87AC4E3.JPG" class="slideshow">
+        
+        <video id="old_studio" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/me+and+t+old+studio.mp4"></video>
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Misc+Pictures/IMG_4697+jonas+.png" class="slideshow">
+        <video id="old_blender" class="video" autoplay loop muted playsinline src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Videos/old+blender.mov"></video>
+        <img name="archiveslideshow3" class="slideshow">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Misc+Pictures/_MG_0758.png" class="slideshow">
+        <img name="archiveslideshow4" class="slideshow">
+    </div>
+    
+<script>
+var i = 0;
+var i2 = 0;
+var i3 = 0;
+var i4 = 0;
+var i5 = 0;
+
+var images = [];
+var images2 = [];
+var images3 = [];
+var images4 = [];
+var images5 = [];
+
+var time = 500;
+var time2 = 1000;
+var time3 = 250;
+
+//Archive Slideshow 1
+    images[0] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+1/IMG_0628.png";
+    images[1] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+1/IMG_0681.png";
+    images[2] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+1/IMG_0711.png";
+    images[3] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+1/IMG_0712.png";
+    images[4] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+1/IMG_0724.png";
+    images[5] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+1/IMG_0742-2.png";
+
+//Archive Slideshow 2
+    images2[0] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/9045608C-D3F1-4971-8A48-8367761EE2A6.JPG";
+    images2[1] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/F9AC8EF8-C253-4D85-8542-0C2E18CC48CB.JPG";
+    images2[2] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/FE0FA88B-16ED-4C5C-951F-299C38D4C7EB.JPG";
+    images2[3] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/IMG_0133.JPG";
+    images2[4] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/IMG_0525.JPG";
+    images2[5] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/IMG_1249.JPG";
+    images2[6] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/IMG_1607.JPG";
+    images2[7] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/IMG_1741.JPG";
+    images2[8] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/IMG_1823+2.JPG";
+    images2[9] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+2/IMG_3028.JPG";
+
+//Archive Slideshow 3
+    images3[0] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+3/DSC_0408.JPG";
+    images3[1] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+3/DSC_0505.JPG";
+    images3[2] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+3/DSC_0525.JPG";
+    images3[3] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+3/DSC_0584.JPG";
+    images3[4] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+3/DSC_0676.JPG";
+    images3[5] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+3/DSC_0404.JPG";
+    images3[6] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+3/DSC_0395.JPG";
+
+//Archive Slideshow 4
+    images4[0] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+4/018A3557-D89A-4A04-B8D3-56FE7CB0E93C.JPG";
+    images4[1] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+4/576C3D98-4222-4B6B-9205-4C206D0C0F91.JPG";
+    images4[2] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+4/5B1FD688-9655-4D21-9834-0571325ED78C.JPG";
+    images4[3] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+4/7AC774BA-9F1B-4EEA-8AC3-E2A69711836A.JPG";
+    images4[4] = "https://f000.backblazeb2.com/file/Noah-Website-Assets/Photobook/Archive/Slideshow+4/8318EB18-9D5D-423E-A08D-FC7290CA42D3.JPG";
+    images4[5] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+4/9094C50F-4573-4DCA-9F15-069A7A393E6E.JPG";
+    images4[6] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+4/B88154D5-8BFC-4A61-8ED0-7FB575849DFF+2.JPG";
+    images4[7] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+4/E0A0CE8D-AB6A-4271-A2DA-C317E2C9AEB0.JPG";
+    images4[8] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+4/E3E77F28-32CB-410C-ABBC-FB6DC132CBC2.JPG";
+
+//Archive Slideshow 5
+    images5[0] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/IMG_9717.JPG";
+    images5[1] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/IMG_9718.JPG";
+    images5[2] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/IMG_9719.JPG";
+    images5[3] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9695.jpg";
+    images5[4] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9698.jpg";
+    images5[5] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9700.jpg";
+    images5[6] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9701.jpg";
+    images5[7] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9702.jpg";
+    images5[8] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9703.jpg";
+    images5[9] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9704.jpg";
+    images5[10] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9705.jpg";
+    images5[11] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9710.jpg";
+    images5[12] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9711.jpg";
+    images5[13] = "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Photobook/Archive/Slideshow+5/_MG_9712.jpg";
+
+
+//Change Slideshow 1
+function changeIMG(){
+    document.archiveslideshow1.src = images [i];
+
+    if (i < images.length - 1){
+        i++;
+    } else {
+        i = 0
+    }
+
+    setTimeout("changeIMG()", time)
+}
+
+//Change Slideshow 2
+function changeIMG2(){
+    document.archiveslideshow2.src = images2 [i2];
+
+    if (i2 < images2.length - 1){
+        i2++;
+    } else {
+        i2 = 0
+    }
+
+    setTimeout("changeIMG2()", time2)
+}
+
+//Change Slideshow 3
+function changeIMG3(){
+    document.archiveslideshow3.src = images3 [i3];
+
+    if (i3 < images3.length - 1){
+        i3++;
+    } else {
+        i3 = 0
+    }
+
+    setTimeout("changeIMG3()", time)
+}
+
+//Change Slideshow 4
+function changeIMG4(){
+    document.archiveslideshow4.src = images4 [i4];
+
+    if (i4 < images4.length - 1){
+        i4++;
+    } else {
+        i4 = 0
+    }
+
+    setTimeout("changeIMG4()", time2)
+}
+
+//Change Slideshow 5
+function changeIMG5(){
+    document.archiveslideshow5.src = images5 [i5];
+
+    if (i5 < images5.length - 1){
+        i5++;
+    } else {
+        i5 = 0
+    }
+
+    setTimeout("changeIMG5()", time3)
+}
+
+//Call Functions
+function callfunctions() {
+    changeIMG();
+    changeIMG2();
+    changeIMG3();
+    changeIMG4();
+    changeIMG5();
+}
+
+window.onload = callfunctions
+
+</script>
+</body>
