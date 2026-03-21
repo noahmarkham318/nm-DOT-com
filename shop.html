@@ -24,7 +24,59 @@
         }
 
 
+        /* Nav Bar */ 
+    .navbar{
+        width: 100%;
+        height: fit-content;
+        border-style: none;
+        background-color: white;
+        position: fixed; top: 0%; left: 0%;
+        box-shadow: 0px 0px 5px;
+        list-style-type: none;
+        z-index: 5;
+
+    }
+    .navbarlist {
+        float: right;
+    }
+    .navbarLINK, .navbar-dropdown{
+        display: block;
+        color: #000000; background-color: white;
+        cursor: pointer;
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 20px; font-family: 'Times New Roman', Times, serif;
+        border-style: none; border-width: 0px;
+    }
+    .navbarLINK:hover{
+        text-decoration: underline;
+        color: #1600ba;
         
+    }
+    .navbar-dropdown-content{    
+        position: absolute;
+        width: 100%;
+        height: fit-content;
+        display: none;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    }
+    .navbar-dropdown-link{
+        color: black;
+            padding: 4px 4px;
+            text-decoration: none;
+            display: block;
+            font-size: 20px;
+    }
+    .navbar-dropdown-link:hover, .navbar-dropdown:hover {
+            background-color: #ffffff;
+            text-decoration: underline;
+            color: #1600ba;
+        }
+        .navbarlist:hover .navbar-dropdown-content {
+            display: block;
+        }
 /* Back Button */
         .backbtn{
             position: fixed; top: 10px; left: 10px;
@@ -40,12 +92,28 @@
 
         @media (max-width: 1200px) {
             .backbtn {font-size: 4vw;}
-            .textbox {font-size: 4vw;}
+            .navbarLINK, .navbar-dropdown {font-size: 4vw;}
+            .navbar-dropdown-link {padding: 15px 4px; font-size: 4vw;}
         }
     </style>
 </head>
 
 <body>
+    <!--Nav Bar-->
+    <div id="navbar" class="navbar">
+        <a href="https://noahmarkham.com/" class="backbtn">back</a>
+        <li class="navbarlist">
+            <button class="navbarLINK">gallery</button>
+                <div class="navbar-dropdown-content">
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/">music</a>
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/video">video</a>
+                    <a class="navbar-dropdown-link" href="https://noahmarkham.com/photo">photo</a>
+                </div>
+        </li>
+        <li class="navbarLIST">
+            <a class="navbarLINK" href="https://noahmarkham.com/shop">shop</a>
+        </li>
+    </div>
     <a href="https://noahmarkham.com/" class="backbtn">back</a>
     <div class="box"><p class="textbox">commerce<br><span style="font-size: 50%;">(coming soon)...</span></p></div>
 </body>
