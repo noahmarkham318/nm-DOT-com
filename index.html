@@ -3,20 +3,15 @@
     body{
         margin: 0%;
     }
-    .wholepage {
-        display: flex;
-        align-items: center; 
-        justify-content: center;
-        height: 100%;
-    }
     /* Containers */
     .container {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-direction: column;
         justify-self: center;
         align-self: center;
+        margin: 0%;
     }
     .BtnContainer {
         display: flex;
@@ -43,13 +38,10 @@
     .ytembed {
         width: 560px;
         height: 315px;
-
-    }
-    .meanwhilecontainer {
         margin-bottom: 5%;
     }
     .in {
-        margin: 0; 
+        margin: 0%; 
         font-family: 'Times New Roman', Times, serif; 
         font-size: 16px;
     }
@@ -70,13 +62,11 @@
 </style>
 
 <body>
-    <div class="wholepage">
     <div class="container">
         <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect.png" alt="StrawberryPerfect" class="header">    
         <p class="in">in</p>
         <p id="demo" class="clock"></p>
         
-        <div class="meanwhilecontainer">
         <p class="meanwhile"> <i>meanwhile:</i></p>
         <iframe class="ytembed" src="https://www.youtube.com/embed/qxwc1El8HL0?si=BNkRmxLBkyUX3r95" 
             title="YouTube video player" 
@@ -85,9 +75,8 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen>
         </iframe>
-        </div>
     </div>
-    </div>
+
 </body>
 
 <script>
