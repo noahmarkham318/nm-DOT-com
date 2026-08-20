@@ -20,6 +20,7 @@
         justify-content: center;
         flex-direction: column;
         justify-self: center;
+        align-self: center;
     }
     .BtnContainer {
         display: flex;
@@ -43,22 +44,34 @@
         padding: 16px;
         margin-bottom: 5%;
     }
+    .in {
+        margin: 0; 
+        font-family: 'Times New Roman', Times, serif; 
+        font-size: 16px;
+    }
+    .meanwhile {
+        margin-top: 0%; 
+        font-family: 'Times New Roman', Times, serif; 
+        font-size: 16px
+    }
 
     /* Media Query For Mobile */
         @media (max-width: 1200px) {
             .header {width: 90%;}
             .ytembed {width: 860px; height: 484px;}
+            .in {font-size: 24px;}
+            .meanwhile {font-size: 24px;}
         }
 </style>
 
 <body>
     <div class="container">
         <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect.png" alt="StrawberryPerfect" class="header">    
-        <p style="margin: 0;">in</p>
+        <p class="in">in</p>
         <p id="demo" class="clock"></p>
         
         <div class="meanwhilecontainer">
-        <p style="margin-top: 0%;">meanwhile:</p>
+        <p class="meanwhile">meanwhile:</p>
         <iframe class="ytembed" src="https://www.youtube.com/embed/qxwc1El8HL0?si=BNkRmxLBkyUX3r95" 
             title="YouTube video player" 
             frameborder="0" 
