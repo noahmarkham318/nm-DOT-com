@@ -3,17 +3,13 @@
     body{
         margin: 0%;
     }
-    .clock {
-        text-align: center;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 48px;
-        border-style: solid; border-width: 8px;
-        padding: 4px;
+    .wholepage {
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        height: 100%;
     }
-    .header {
-        width: 44%; 
-
-    }
+    /* Containers */
     .container {
         display: flex;
         align-items: center;
@@ -29,8 +25,20 @@
         gap: 4px;
         width: 100%;
     }
+
+    /* Elements */
+    .header {
+        width: 44%; 
+    }
     .hivemindbtn{
         height: 24px;
+    }
+    .clock {
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 48px;
+        border-style: solid; border-width: 8px;
+        padding: 4px;
     }
     .ytembed {
         width: 560px;
