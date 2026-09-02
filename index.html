@@ -3,7 +3,7 @@
     body{
         margin: 0%;
     }
-    /* Containers */
+/* Containers */
     .container {
         display: flex;
         align-items: center;
@@ -11,8 +11,9 @@
         flex-direction: column;
         justify-self: center;
         align-self: center;
-        margin: 0%; margin-bottom: 50%;
+        margin: 0%; margin-bottom: 10%;
         height: 100vh;
+
     }
     .BtnContainer {
         display: flex;
@@ -21,7 +22,7 @@
         width: 100%;
     }
 
-    /* Elements */
+/* Elements */
     .header {
         width: 33%; 
     }
@@ -37,7 +38,7 @@
     }
     .ytembed {
         width: 50%;
-        margin-bottom: 5%;
+        margin-bottom: 2%;
         aspect-ratio: 16/9;
     }
     .in {
@@ -51,19 +52,32 @@
         font-size: 16px;
         text-align: center;
     }
+    .linkbox {
+        padding-bottom: 5%;
+    }
+    .dropdownLINK {
+        margin: 8px;
+        font-family: 'Times New Roman', Times, serif; 
+        font-size: 16px;
+        text-align: center;
+    }
 
-    /* Media Query For Mobile */
+/* Media Query For Mobile */
         @media (max-width: 1200px) {
             .header {width: 75%;}
             .ytembed {width: 66%; height: auto; aspect-ratio: 16/9;}
             .in {font-size: 32px;}
             .meanwhile {font-size: 32px;}
+            .dropdownLINK {font-size: 24px}
         }
 </style>
 
 <body>
+<!--Strawberry Perfect Container-->
     <div class="container">
-        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect.png" alt="StrawberryPerfect" class="header">    
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect.png" 
+        alt="StrawberryPerfect" 
+        class="header">    
         <p class="in">in</p>
         <p id="demo" class="clock"></p>
         
@@ -82,6 +96,15 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen>
         </iframe>
+    <!--Streaming Links-->
+    <div class="linkbox">
+        <a class="dropdownLINK" href="https://music.apple.com/us/artist/noah-markham/1553834605" target="_blank">apple music</a>
+        <a class="dropdownLINK" href="https://open.spotify.com/artist/1JcqOc8cUn2u64XBOBkiKm" target="_blank">spotify</a>
+        <a class="dropdownLINK" href="https://music.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">yt music</a>
+        <a class="dropdownLINK" href="https://music.amazon.in/artists/B08WX6WMG3/noah-markham" target="_blank">amazon</a>
+        <a class="dropdownLINK" href="https://tidal.com/artist/36688543" target="_blank">tidal</a>
+        <a class="dropdownLINK" href="https://www.deezer.com/us/artist/67600882?host=0&deferredFl=1" target="_blank">deezer</a>
+    </div>
     </div>
 
 </body>
