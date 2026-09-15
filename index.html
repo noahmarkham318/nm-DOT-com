@@ -15,6 +15,14 @@
         height: 100vh;
 
     }
+    .footer {
+        display: block;
+        position: relative;
+        color: white;
+        background-color: white;
+        width: 100%;
+        height: 24px;
+    }
     .BtnContainer {
         display: flex;
         justify-content: center;
@@ -29,36 +37,26 @@
     .hivemindbtn{
         margin: 5%;
     }
-    .clock {
-        text-align: center;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 48px;
-        border-style: solid; border-width: 8px;
-        padding: 4px;
-    }
+
     .ytembed {
         width: 50%;
         margin-bottom: 2%;
         aspect-ratio: 16/9;
     }
-    .in {
-        margin: 0%; 
-        font-family: 'Times New Roman', Times, serif; 
-        font-size: 16px;
-    }
-    .meanwhile {
-        font-family: 'Times New Roman', Times, serif; 
-        font-size: 16px;
-        text-align: center;
-    }
     .linkbox {
         margin-bottom: 2%;
+        display: flex;
+        flex-direction: column;
     }
-    .dropdownLINK {
+    .streamLINK {
         margin: 8px;
         font-family: 'Times New Roman', Times, serif; 
-        font-size: 16px;
+        font-size: 24px;
         text-align: center;
+    }
+    .logo {
+        padding: 10%;
+        width: 10%;
     }
 
 /* Media Query For Mobile */
@@ -67,7 +65,7 @@
             .ytembed {width: 66%; height: auto; aspect-ratio: 16/9;}
             .in {font-size: 32px;}
             .meanwhile {font-size: 32px;}
-            .dropdownLINK {font-size: 24px}
+            .streamLINK {font-size: 48px}
         }
 </style>
 
@@ -75,21 +73,18 @@
 <!--Strawberry Perfect Container-->
     <div class="container">
         <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect.png" 
-        alt="StrawberryPerfect" 
+        alt="Strawberry Perfect" 
         class="header">    
-        <p class="in">in</p>
-        <p id="demo" class="clock"></p>
-        
-        <p class="meanwhile"> <i>meanwhile:</i></p>
+
     <!--Streaming Links-->
         <div class="linkbox">
-            <a class="dropdownLINK" href="https://music.apple.com/us/album/miracles/6804519914?i=6804519915" target="_blank">apple music</a>
-            <a class="dropdownLINK" href="https://open.spotify.com/album/5HO8GNyekHmxZXdkiv4bqH?si=swTDQmZSTTq6d5JVw-PSPQ" target="_blank">spotify</a>
-            <a class="dropdownLINK" href="https://music.youtube.com/playlist?list=OLAK5uy_mPNV3PIRZkSHyXj5wmDLpoW7rHtWyyMAY&si=H5pteYzjuUPeQq6W" target="_blank">yt music</a>
-            <a class="dropdownLINK" href="https://music.youtube.com/playlist?list=OLAK5uy_mPNV3PIRZkSHyXj5wmDLpoW7rHtWyyMAY&si=H5pteYzjuUPeQq6W" target="_blank">amazon</a>
-            <a class="dropdownLINK" href="https://tidal.com/track/554936287/u" target="_blank">tidal</a>
-            <a class="dropdownLINK" href="https://link.deezer.com/s/34i4gU0jorOcmgp1JmiLY" target="_blank">deezer</a>
-            <a class="dropdownLINK" href="https://www.qobuz.com/us-en/album/miracles-noah-markham/hniq11g1jfynb" target="_blank">qobuz</a>
+            <a class="streamLINK" href="https://music.apple.com/us/album/strawberry-perfect/6811964367?uo=4&app=music&at=1001lry3&ct=dashboard" target="_blank">apple music</a>
+            <a class="streamLINK" href="https://open.spotify.com/album/0dyp138vU9YB0x5aLTI1sS" target="_blank">spotify</a>
+            <a class="streamLINK" href="https://music.youtube.com/playlist?list=OLAK5uy_mdpOG_MrxyT4BohPuA5p7DAJhH4ML0Muc&si=Frt1mykTNIUX-BYZ" target="_blank">yt music</a>
+            <a class="streamLINK" href="https://music.amazon.com/albums/B0HJRTSHH1?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_AEc8mP8KX9tAHHjg8W15N9i5A" target="_blank">amazon</a>
+            <a class="streamLINK" href="https://link.deezer.com/s/34pmCHIZiXwZ3e228fWaa" target="_blank">deezer</a>
+            <a class="streamLINK" href="" target="_blank">qobuz</a>
+            <a class="streamLINK" href="https://tidal.com/album/561140151/u" target="_blank">tidal</a>
         </div>
         <iframe class="ytembed" src="https://www.youtube.com/embed/iGMFK79BpdY?si=gEdX1IEE1sogZWxQ" 
             title="YouTube video player" 
@@ -105,38 +100,15 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen>
         </iframe>
+        <img class="logo" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png" alt="noah markham">
+
     </div>
+
+   
 
 </body>
 
 <script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("Sept 15, 2026 15:00:00").getTime();
 
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-
-    // Get today's date and time
-    var now = new Date().getTime();
-    
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-    
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-        
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-    }, 1000);
     </script>
 </html>
