@@ -66,7 +66,7 @@
         display: flex;
         width: 100%;
         justify-content: space-evenly;
-        flex-direction: ;
+        flex-direction: column;
         padding: 10px;
 
     }
@@ -77,8 +77,109 @@
         text-align: center;
     }
     .logo {
-        padding: 10%;
-        width: 10%;
+        padding: 5%;
+        width: 5%;
+    }
+
+/* Play Buttons */
+    .play-button, .forward-button, .back-button {
+            height: 32px;
+            width: 32px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-color: black
+
+    }
+    .play-button:hover, .forward-button:hover, .back-button:hover {
+        transform: scale(.9);
+        border-color: #1600ba;
+        background-color: #1600ba;
+    } 
+    .playicon {
+        height: 0px;
+        width: 0px;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 9px solid white;
+        border-radius: 0px;
+        
+    }
+    .pauseicon {
+        height: 15px;
+        width: 15px;
+        background-color: transparent;
+        border-width: 0px 0px 0px 9px;
+        border-style: double;
+        border-color: white;
+        margin-left: 3.5px;
+    }
+    .playspeedicon{
+        height: 15px; width: 15px;
+        
+        font-family: 'Times New Roman', Times, serif;
+        color:white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    .playspeedicon:hover{
+        background-color: #1600ba;
+    }
+    .btnsrow{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        left: 50%; transform: translate(-50%);
+    }
+    .btnscontainer{
+        width: fit-content; padding: 1%;
+        display: block;
+        position: relative;
+        left: 50%; transform: translate(-50%);
+        margin-top: 2%;
+        border-style: solid; border-width: 1px; border-color: black;
+    }
+
+/* Song Selector */
+    .songselectordropdown{
+        margin-top: 1%;
+        position: fixed; 
+        left: 50%; transform: translateX(-50%); bottom: 75px;
+        text-align: center;
+        border-style: solid; border-width: 1px; border-color: black;
+        padding: 10px;
+        width: fit-content;
+        z-index: 4;
+        background-color: white;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.378);
+        opacity: 95%;
+        animation-name: fixedboxfadein; animation-timing-function: linear; animation-duration: 6s;
+    }
+    @keyframes fixedboxfadein{
+        0% {opacity: 0%;}
+        25% {opacity: 0%;}
+        100% {opacity: 95%;}
+    }
+    .songselector{
+        color: black;
+        text-align: left;
+        width: fit-content;
+        border: 100%; border-radius: 3%;
+        background-color: #ffffff;
+        border-width: 1px; border-style: solid; border-color: black;
+        font-family: 'Times New Roman', Times, serif; font-size: 14px;
+        padding: 3px;
+        animation-name: colorswitch; animation-duration: 6s; animation-timing-function: linear; animation-iteration-count: infinite;
+    }
+    .songselectorlabel{
+        color: black;
+        font-family: 'Times New Roman', Times, serif; font-size: 16px;
     }
 
 /* Media Query For Mobile */
@@ -89,20 +190,21 @@
             .in {font-size: 32px;}
             .meanwhile {font-size: 32px;}
             .streamLINK {font-size: 36px}
-            .logo { width: 25%;}
+            .logo { width: 15%;}
         }
 </style>
 
 <body>
-<!--Strawberry Perfect Container-->
+        <div class="spacer"></div>
+
+
         <div class="headerFIXEDBOX">
         <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/strawberry+perfect+horizontal+4+(white+strawberry).png" 
         alt="Strawberry Perfect" 
         class="headerFIXED">   
         </div> 
-
-        <div class="spacer"></div>
         
+    <!--Strawberry Perfect Container-->
         <div class="container">        
     <!--Streaming Links-->
         <div class="linkbox">
