@@ -31,8 +31,25 @@
     }
 
 /* Elements */
+    .headerFIXEDBOX {
+        width: 100%; height: 100px;
+        position: fixed;
+        background-color: black;
+        top: 0; left: 0;
+        display: flex; justify-content: center; align-items: center;
+    }
+    .headerFIXED {
+        width: 500px;
+        position: fixed;
+    }
     .header {
         width: 33%; 
+        margin-top: 2%;
+    }
+    .spacer {
+        width: 100%; height: 100px;
+        background-color: red;
+        box-shadow: 0px 0px 1px red;
     }
     .hivemindbtn{
         margin: 5%;
@@ -42,17 +59,21 @@
         width: 50%;
         margin-bottom: 2%;
         aspect-ratio: 16/9;
+        border-style: solid; border-color: black; border-width: 1px;
     }
     .linkbox {
-        margin-bottom: 2%;
+        margin: 2%;
         display: flex;
-        flex-direction: column;
-        padding: 2%;
+        width: 100%;
+        justify-content: space-evenly;
+        flex-direction: ;
+        padding: 10px;
+
     }
     .streamLINK {
         margin: 8px;
         font-family: 'Times New Roman', Times, serif; 
-        font-size: 24px;
+        font-size: 20px;
         text-align: center;
     }
     .logo {
@@ -63,20 +84,26 @@
 /* Media Query For Mobile */
         @media (max-width: 1200px) {
             .header {width: 75%;}
-            .ytembed {width: 66%; height: auto; aspect-ratio: 16/9;}
+            .linkbox {flex-direction: column;}
+            .ytembed {width: 75%; height: auto; aspect-ratio: 16/9;}
             .in {font-size: 32px;}
             .meanwhile {font-size: 32px;}
             .streamLINK {font-size: 36px}
+            .logo { width: 5%;}
         }
 </style>
 
 <body>
 <!--Strawberry Perfect Container-->
-    <div class="container">
-        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect.png" 
+        <div class="headerFIXEDBOX">
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/strawberry+perfect+horizontal+4+(white+strawberry).png" 
         alt="Strawberry Perfect" 
-        class="header">    
+        class="headerFIXED">   
+        </div> 
 
+        <div class="spacer"></div>
+        
+        <div class="container">        
     <!--Streaming Links-->
         <div class="linkbox">
             <a class="streamLINK" href="https://music.apple.com/us/album/strawberry-perfect/6811964367?uo=4&app=music&at=1001lry3&ct=dashboard" target="_blank">apple music</a>
