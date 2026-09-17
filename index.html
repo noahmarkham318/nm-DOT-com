@@ -100,6 +100,25 @@
         object-fit: contain;
     }
 
+    /*
+    Source - https://stackoverflow.com/a/65658994
+    Posted by Eric McWinNEr, modified by community. See post 'Timeline' for change history
+    Retrieved 2026-09-17, License - CC BY-SA 4.0
+    */
+
+    #messageDisplay {
+        opacity: 0;
+        transition: 1s;
+        font-family: 'Times New Roman', Times, serif; font-size: 16px;
+    }
+    #messageDisplay.fade-in {
+        opacity: 1;
+        transition: 0s;
+    }
+    #messageDisplay.hide {
+        display: none;
+}
+
 /* Play Buttons */
     .play-button, .forward-button, .back-button {
             height: 32px;
@@ -111,7 +130,6 @@
             text-align: center;
             text-decoration: none;
             border-color: black
-
     }
     .play-button:hover, .forward-button:hover, .back-button:hover {
         transform: scale(.9);
@@ -234,7 +252,7 @@
         class="headerFIXED">   
         </div> 
         
-    <!--Strawberry Perfect Container-->
+    <!--Page Container-->
     
         <div class="container">          
             <div class="covercontainer">
@@ -253,8 +271,12 @@
                 <a class="streamLINK" href="https://tidal.com/album/561140151/u" target="_blank">tidal</a>
             </div>
             
-            <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+2.png" alt="arrow">
+            <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+3.png" alt="arrow">
    
+    <!--Hivemind Button-->
+            <p>Hivemind Button: <button id="button" onclick="generateMessage()">Tell me what to think!</button></p>
+            <div id="messageDisplay">asdf</div>
+
     <!--Youtube Embeds-->
             <iframe class="ytembed" src="https://www.youtube.com/embed/iGMFK79BpdY?si=gEdX1IEE1sogZWxQ" 
                 title="YouTube video player" 
@@ -264,7 +286,7 @@
                 allowfullscreen>
             </iframe>
             
-            <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+2.png" alt="arrow">
+            <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+3.png" alt="arrow">
 
             <iframe class="ytembed" src="https://www.youtube.com/embed/qxwc1El8HL0?si=BNkRmxLBkyUX3r95" 
                 title="YouTube video player" 
@@ -277,7 +299,10 @@
             <img class="logo" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png" alt="noah markham">
 
             <div class="footer">asdf</div>
+            
         </div>
+
+       
 
     <!--Song Selector-->
         <div class="songselectorcontainer">
@@ -309,13 +334,52 @@
             </div>
         </div>
    
+        
 
 </body>
 
 <script>
 
-//Tracks
+let messages = [
+    "\"what’s so great about it anyway?\"",
+    "\"oh yeah?\"",
+    "\"what’s in it for me?\"",
+    "\"I’ve been in love w Jessica Alba since I was a child\"",
+    "\“whose idea was this?\”",
+    "\“why would i waste my time?\”",
+    "\“i guess\"",
+    "\“if thats what ur into\”",
+    "\"if u like it i love it\”",
+    "\"k\"",
+    "\"i guess\"",
+    
+];
 
+function generateMessage() {
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    document.getElementById('messageDisplay').textContent = messages[randomIndex];
+}
+
+// Source - https://stackoverflow.com/a/65658994
+// Posted by Eric McWinNEr, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-09-17, License - CC BY-SA 4.0
+
+let button = document.getElementById("button");
+button.addEventListener("click", function () {
+  let text = document.getElementById("messageDisplay");
+  text.classList.remove("hide");
+  setTimeout(function () {
+    text.classList.add("fade-in");
+    setTimeout(function () {
+      text.classList.remove("fade-in");
+      setTimeout(function () {
+        text.classList.add("hide");
+      }, 1000);
+    }, 2000);
+  });
+});
+
+//Song Selector
 //Play Pause Icon Toggle
 let iconswitch = document.getElementById("playicon");
 let player = document.getElementById("player");
