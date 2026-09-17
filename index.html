@@ -104,7 +104,6 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
 */
     #messageDisplay {
         font-family: 'Times New Roman', Times, serif; font-size: 16px; color: black;
-        display: none;
     }
 /* my additions */
     .hivemindbtntxt {
@@ -284,7 +283,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         <div class="container">       
     <!--Hivemind Button-->
             <p class="hivemindbtntxt">Hivemind Button: <button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
-            <div class="added-fade-out" id="messageDisplay">asdf</div>
+            <div class="added-fade-out" id="messageDisplay" style="display: none;">asdf</div>
 
             <div class="covercontainer">
                 <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/1.png" alt="cover art">
@@ -417,6 +416,7 @@ function txtPopup() {
 
 // My additions
 var hivemindbtn = document.getElementById("hivemindbtn");
+
 hivemindbtn.addEventListener("click", function() {
     generateMessage(), 
     txtPopup()
