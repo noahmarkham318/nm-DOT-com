@@ -66,10 +66,6 @@
     }
 
     /* Elements */
-    .hivemindbtn{
-        margin: 5%;
-    }
-
     .ytembed {
         width: 33%;
         aspect-ratio: 16/9;
@@ -100,16 +96,17 @@
         object-fit: contain;
     }
 
-    /*
-    Source - https://stackoverflow.com/a/65658994
-    Posted by Eric McWinNEr, modified by community. See post 'Timeline' for change history
-    Retrieved 2026-09-17, License - CC BY-SA 4.0
-    */
+/*
+Source - https://stackoverflow.com/a/65658994
+Posted by Eric McWinNEr, modified by community. See post 'Timeline' for change history
+Retrieved 2026-09-17, License - CC BY-SA 4.0
+*/
 
     #messageDisplay {
         opacity: 0;
         transition: 1s;
-        font-family: 'Times New Roman', Times, serif; font-size: 16px;
+        font-family: 'Times New Roman', Times, serif; font-size: 16px; color: black;
+        display: none;
     }
     #messageDisplay.fade-in {
         opacity: 1;
@@ -117,8 +114,16 @@
     }
     #messageDisplay.hide {
         display: none;
-}
+    }
 
+
+/* my additions */
+    .hivemindbtntxt {
+        font-family: 'Times New Roman', Times, serif; font-size: 16px; color: black;
+    }
+    .hivemindbtn {
+        font-family: 'Times New Roman', Times, serif; font-size: 16px; color: black;
+    }
 /* Play Buttons */
     .play-button, .forward-button, .back-button {
             height: 32px;
@@ -240,6 +245,10 @@
             .btnscontainer {margin-top: 3%; padding: 0%; border-style: none;}
             .songselector {font-size: 3vw;}
             .songselectorlabel {font-size: 3vw;}
+
+            #messageDisplay {font-size: 32px;}
+            .hivemindbtn {font-size: 32px;}
+            .hivemindbtntxt {font-size: 32px;}
         }
 </style>
 
@@ -253,8 +262,11 @@
         </div> 
         
     <!--Page Container-->
-    
-        <div class="container">          
+        <div class="container">       
+    <!--Hivemind Button-->
+            <p>Hivemind Button: <button id="button" onclick="generateMessage()">Tell me what to think!</button></p>
+            <div id="messageDisplay">asdf</div>
+
             <div class="covercontainer">
                 <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/1.png" alt="cover art">
                 <img class="backcoverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect+Back+cover+2.png" alt="cover art">
@@ -272,10 +284,6 @@
             </div>
             
             <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+3.png" alt="arrow">
-   
-    <!--Hivemind Button-->
-            <p>Hivemind Button: <button id="button" onclick="generateMessage()">Tell me what to think!</button></p>
-            <div id="messageDisplay">asdf</div>
 
     <!--Youtube Embeds-->
             <iframe class="ytembed" src="https://www.youtube.com/embed/iGMFK79BpdY?si=gEdX1IEE1sogZWxQ" 
@@ -334,25 +342,34 @@
             </div>
         </div>
    
-        
-
 </body>
 
 <script>
 
+
+// Source - https://www.facebook.com/watch/?v=1417187223529035
+
 let messages = [
-    "\"what’s so great about it anyway?\"",
-    "\"oh yeah?\"",
-    "\"what’s in it for me?\"",
-    "\"I’ve been in love w Jessica Alba since I was a child\"",
-    "\“whose idea was this?\”",
-    "\“why would i waste my time?\”",
-    "\“i guess\"",
-    "\“if thats what ur into\”",
-    "\"if u like it i love it\”",
-    "\"k\"",
-    "\"i guess\"",
-    
+    "\"whether running or skate across a colorful you accost\"",
+    "\"your mind\'s a guess\"",
+    "\"worry about it IMPRESSIVE miracles instead\"",
+    "\"i\'ve got to get to you\"",
+
+    "\"i can\'t feel, and i\'m all shaky, itchy, tired \& wasteful\"",
+    "\"i\'m a liar, so i taste like\"",
+     "\"so i take myself too serious\"",
+
+    "\"i don't wanna read your mind, i could read you in a bible\"",
+    "\"Allah Smile\"",
+    "\"dive right, it\'s not so scary\"",
+    "\"hold me, im a hand\"",
+    "\"i put a hole in my own head\"",
+    "\"break\"",
+
+    "\"i\'m only with the circus people\"",
+    "\"but it\'s going up for bidding?\"",
+    "\"there's more bottles under the sink\"",
+    "\"the worst is over\"",
 ];
 
 function generateMessage() {
@@ -365,8 +382,14 @@ function generateMessage() {
 // Retrieved 2026-09-17, License - CC BY-SA 4.0
 
 let button = document.getElementById("button");
+let text = document.getElementById("messageDisplay");
+function stopfunction() {clearTimeout(text)}
+
 button.addEventListener("click", function () {
-  let text = document.getElementById("messageDisplay");
+
+button.addEventListener("click", stopfunction)
+
+  text.style.display = "block";
   text.classList.remove("hide");
   setTimeout(function () {
     text.classList.add("fade-in");
@@ -374,8 +397,9 @@ button.addEventListener("click", function () {
       text.classList.remove("fade-in");
       setTimeout(function () {
         text.classList.add("hide");
+            text.style.display = "none";
       }, 1000);
-    }, 2000);
+    }, 500);
   });
 });
 
