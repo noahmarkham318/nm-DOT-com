@@ -17,18 +17,21 @@
 
     }
     .footer {
-        display: block;
-        position: relative;
         color: white;
         background-color: white;
         width: 100%;
-        height: 24px;
+
     }
     .BtnContainer {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
+    }
+    .covercontainer {
+        width: 100%;
+        display: flex;
+        justify-content: center; align-items: center; gap: 20px;
     }
 
 /* Elements */
@@ -42,6 +45,11 @@
     .headerFIXED {
         width: 500px;
         position: fixed;
+    }
+    .coverart {
+        width: 25%;
+        border-style: solid; border-width: 1px; border-color: black;
+
     }
     .header {
         width: 33%; 
@@ -57,7 +65,7 @@
     }
 
     .ytembed {
-        width: 50%;
+        width: 33%;
         aspect-ratio: 16/9;
         border-style: solid; border-color: black; border-width: 1px;
     }
@@ -76,6 +84,7 @@
     }
     .logo {
         width: 5%; height: fit-content;
+        margin: 10%;
     }
 
 /* Play Buttons */
@@ -156,11 +165,10 @@
         background-color: white;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.378);
         opacity: 95%;
-        animation-name: fixedboxfadein; animation-timing-function: linear; animation-duration: 6s;
+        animation-name: fixedboxfadein; animation-timing-function: linear; animation-duration: 4s;
     }
     @keyframes fixedboxfadein{
         0% {opacity: 0%;}
-        25% {opacity: 0%;}
         100% {opacity: 95%;}
     }
     .songselector{
@@ -194,7 +202,6 @@
 <body>
         <div class="spacer"></div>
 
-
         <div class="headerFIXEDBOX">
         <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/strawberry+perfect+horizontal+4+(white+strawberry).png" 
         alt="Strawberry Perfect" 
@@ -205,7 +212,42 @@
     
         <div class="container">    
                     
-        <img class="logo" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png" alt="noah markham">
+        <div class="covercontainer">
+            <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/1.png" alt="cover art">
+            <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect+Back+cover+2.png" alt="cover art">
+        </div>  
+        
+    <!--Song Selector-->
+    <div class="songselectordropdown">
+        <div class="selector">
+        <label class="songselectorlabel" for="membership">Choose a song:</label>
+            <select class="songselector" name="membership" id="membership">
+                <option value="MiraclesinApril" selected>1. Miracles in April</option>
+                <option value="FTLOOB">2. &quot;For the Love of&quot; or &quot;Beber&quot;</option>
+                <option value="ChasingRibbons">3. Cashing Ribbons (feat. T)</option>
+                <option value="Alba">4. Alba</option>
+                <option value="TenLetters">5. Ten Letter</option>
+                <option value="ZapataPowerball">6. Zapata Powerball</option>
+                <option value="TriptoVegas">7. Trip to Vegas (Lobotomy)</option>
+                <option value="PWPSAS">8. Person Watching People Stare @ Someone #hip</option>
+            </select>
+        
+    </div>
+        <!--Play Buttons-->
+        <audio id="player"></audio>
+        <div class="btnscontainer">
+        <div class="btnsrow">
+            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
+            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
+            <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
+            <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
+            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
+            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
+            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
+        </div>
+        </div>
+        </div>
+
 
     <!--Streaming Links-->
         <div class="linkbox">
@@ -234,6 +276,9 @@
             allowfullscreen>
         </iframe>
 
+        <img class="logo" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png" alt="noah markham">
+
+        <div class="footer">asdf</div>
     </div>
 
    
@@ -242,5 +287,98 @@
 
 <script>
 
-    </script>
+//Tracks
+
+//Play Pause Icon Toggle
+let iconswitch = document.getElementById("playicon");
+let player = document.getElementById("player");
+
+function playpause() {   
+    if (iconswitch.classList.contains("playicon")) {
+        iconswitch.classList.remove("playicon");
+        iconswitch.classList.add("pauseicon");
+    }
+    else {
+        iconswitch.classList.remove("pauseicon");
+        iconswitch.classList.add("playicon");
+    }  
+};
+
+player.addEventListener("ended", playpause);
+
+//Play Pause Toggle
+function togglePlay() {
+   return player.paused ? player.play() : player.pause();
+};
+
+//Playspeed
+
+function halfspeed() {
+   player.playbackRate = 0.5;
+   player.preservesPitch = false;
+};
+function threequartspeed() {
+   player.playbackRate = 0.75;
+   player.preservesPitch = false;
+};
+function normalspeed() {
+   player.playbackRate = 1;
+   player.preservesPitch = false;
+};
+function onepointfivespeed() {
+   player.playbackRate = 1.5;
+   player.preservesPitch = false;
+};
+function twicespeed() {
+   player.playbackRate = 2;
+   player.preservesPitch = false; 
+};
+
+//Start From Beginning
+function startover(){
+    player.currentTime = 0
+}
+
+document.getElementById("startoverbtn").addEventListener("click", startover)
+
+//Next & Back Buttons
+const membershipEl = document.getElementById("membership");
+
+//Song Selector
+const sounds = {
+  MiraclesinApril: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Audio/from+first+piano+since_9+(mix+9+ALBUM)_Master.wav"
+  },
+  FTLOOB: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Audio/For+the+Love+of+OR+Beber+(mix+7).wav"
+  },
+  ChasingRibbons: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Audio/Chasing+Ribbons+(ft+T)+(mix+13-1).wav"
+  },
+  Alba: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Audio/Alba+(mix+14).wav"
+  },
+  TenLetters: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Audio/Ten+Letters+(shoudler)+(mix+4).wav"
+  },
+  ZapataPowerball: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Audio/zapata+powerball+(yue)+(demo).wav"
+  },
+  TriptoVegas: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Audio/trip+to+vegas+(lobotomy)+(mix+1).wav"
+  },
+  PWPSAS: {
+    url: "https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Audio/but+you+know+me+get+off_5+(mix+4)_Master.wav"
+  },
+};
+
+player.src = sounds[membershipEl.value].url;
+
+membershipEl.addEventListener("change", (e) => {
+    player.src = sounds[e.target.value].url; 
+    iconswitch.classList.remove("pauseicon");
+    iconswitch.classList.add("playicon");
+});
+
+</script>
 </html>
