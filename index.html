@@ -192,8 +192,10 @@
 
 /* Media Query For Mobile */
         @media (max-width: 1200px) {
-            .container {gap: 5px; padding: 5px;}
-            .header {width: 75%;}
+            .container {gap: 20px; padding: 20px;}
+            .headerFIXED {width: 1000px;}
+            .headerFIXEDBOX {height: 200px;}
+
             .ytembed {width: 75%; height: auto; aspect-ratio: 16/9;}
             .in {font-size: 32px;}
             .meanwhile {font-size: 32px;}
@@ -221,76 +223,72 @@
         
     <!--Strawberry Perfect Container-->
     
-        <div class="container">    
-                    
-        <div class="covercontainer">
-            <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/1.png" alt="cover art">
-            <img class="backcoverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect+Back+cover+2.png" alt="cover art">
-        </div>  
-        
-    <!--Song Selector-->
-    <div class="songselectorcontainer">
-        <div class="selector">
-        <label class="songselectorlabel" for="membership">Choose a song:</label>
-            <select class="songselector" name="membership" id="membership">
-                <option value="MiraclesinApril" selected>1. Miracles in April</option>
-                <option value="FTLOOB">2. &quot;For the Love of&quot; or &quot;Beber&quot;</option>
-                <option value="ChasingRibbons">3. Chasing Ribbons (feat. T)</option>
-                <option value="Alba">4. Alba</option>
-                <option value="TenLetters">5. Ten Letter</option>
-                <option value="ZapataPowerball">6. Zapata Powerball</option>
-                <option value="TriptoVegas">7. Trip to Vegas (Lobotomy)</option>
-                <option value="PWPSAS">8. Person Watching People Stare @ Someone #hip</option>
-            </select>
-        </div>
-        <!--Play Buttons-->
-        <audio id="player"></audio>
-        <div class="btnscontainer">
-        <div class="btnsrow">
-            <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
-            <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
-            <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
-            <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
-            <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
-            <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
-            <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
-        </div>
-        </div>
-    </div>
-
+        <div class="container">          
+            <div class="covercontainer">
+                <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/1.png" alt="cover art">
+                <img class="backcoverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect+Back+cover+2.png" alt="cover art">
+            </div>  
 
     <!--Streaming Links-->
-        <div class="linkbox">
+            <div class="linkbox">
+                <a class="streamLINK" href="https://music.apple.com/us/album/strawberry-perfect/6811964367?uo=4&app=music&at=1001lry3&ct=dashboard" target="_blank">apple music</a>
+                <a class="streamLINK" href="https://open.spotify.com/album/0dyp138vU9YB0x5aLTI1sS" target="_blank">spotify</a>
+                <a class="streamLINK" href="https://music.youtube.com/playlist?list=OLAK5uy_mdpOG_MrxyT4BohPuA5p7DAJhH4ML0Muc&si=Frt1mykTNIUX-BYZ" target="_blank">yt music</a>
+                <a class="streamLINK" href="https://music.amazon.com/albums/B0HJRTSHH1?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_AEc8mP8KX9tAHHjg8W15N9i5A" target="_blank">amazon</a>
+                <a class="streamLINK" href="https://link.deezer.com/s/34pmCHIZiXwZ3e228fWaa" target="_blank">deezer</a>
+                <a class="streamLINK" href="" target="_blank">qobuz</a>
+                <a class="streamLINK" href="https://tidal.com/album/561140151/u" target="_blank">tidal</a>
+            </div>
+            
+            <iframe class="ytembed" src="https://www.youtube.com/embed/iGMFK79BpdY?si=gEdX1IEE1sogZWxQ" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+            <iframe class="ytembed" src="https://www.youtube.com/embed/qxwc1El8HL0?si=BNkRmxLBkyUX3r95" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
 
-            <a class="streamLINK" href="https://music.apple.com/us/album/strawberry-perfect/6811964367?uo=4&app=music&at=1001lry3&ct=dashboard" target="_blank">apple music</a>
-            <a class="streamLINK" href="https://open.spotify.com/album/0dyp138vU9YB0x5aLTI1sS" target="_blank">spotify</a>
-            <a class="streamLINK" href="https://music.youtube.com/playlist?list=OLAK5uy_mdpOG_MrxyT4BohPuA5p7DAJhH4ML0Muc&si=Frt1mykTNIUX-BYZ" target="_blank">yt music</a>
-            <a class="streamLINK" href="https://music.amazon.com/albums/B0HJRTSHH1?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_AEc8mP8KX9tAHHjg8W15N9i5A" target="_blank">amazon</a>
-            <a class="streamLINK" href="https://link.deezer.com/s/34pmCHIZiXwZ3e228fWaa" target="_blank">deezer</a>
-            <a class="streamLINK" href="" target="_blank">qobuz</a>
-            <a class="streamLINK" href="https://tidal.com/album/561140151/u" target="_blank">tidal</a>
-        </div>
-        
-        <iframe class="ytembed" src="https://www.youtube.com/embed/iGMFK79BpdY?si=gEdX1IEE1sogZWxQ" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-        </iframe>
-        <iframe class="ytembed" src="https://www.youtube.com/embed/qxwc1El8HL0?si=BNkRmxLBkyUX3r95" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-        </iframe>
+            <img class="logo" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png" alt="noah markham">
 
-        <img class="logo" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png" alt="noah markham">
-
-        <div class="footer">asdf</div>
+            <div class="footer">asdf</div>
     </div>
 
+    <!--Song Selector-->
+        <div class="songselectorcontainer">
+            <div class="selector">
+            <label class="songselectorlabel" for="membership">Choose a song:</label>
+                <select class="songselector" name="membership" id="membership">
+                    <option value="MiraclesinApril" selected>1. Miracles in April</option>
+                    <option value="FTLOOB">2. &quot;For the Love of&quot; or &quot;Beber&quot;</option>
+                    <option value="ChasingRibbons">3. Chasing Ribbons (feat. T)</option>
+                    <option value="Alba">4. Alba</option>
+                    <option value="TenLetters">5. Ten Letter</option>
+                    <option value="ZapataPowerball">6. Zapata Powerball</option>
+                    <option value="TriptoVegas">7. Trip to Vegas (Lobotomy)</option>
+                    <option value="PWPSAS">8. Person Watching People Stare @ Someone #hip</option>
+                </select>
+            </div>
+            <!--Play Buttons-->
+            <audio id="player"></audio>
+            <div class="btnscontainer">
+            <div class="btnsrow">
+                <button class="play-button" onclick="halfspeed()"><div class="playspeedicon">.5x</div></button>
+                <button class="play-button" onclick="threequartspeed()"><div class="playspeedicon">.75x</div></button>
+                <button class="play-button" id="startoverbtn"><div class="playspeedicon">&lt;</div></button>
+                <button class="play-button" id="track1-play-button" onclick="playpause(), togglePlay(), normalspeed()"><div class="playicon" id="playicon"></div></button>
+                <button class="play-button" onclick="normalspeed()"><div class="playspeedicon">1x</div></button>
+                <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
+                <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
+            </div>
+            </div>
+        </div>
    
 
 </body>
