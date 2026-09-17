@@ -62,7 +62,7 @@
     .spacer {
         width: 100%; height: 100px;
         background-color: red;
-        box-shadow: 0px 0px 1px red;
+        box-shadow: 0px 0px 2px red;
     }
 
     /* Elements */
@@ -83,6 +83,7 @@
         font-family: 'Times New Roman', Times, serif; 
         font-size: 20px;
         text-align: center;
+        color: #1600ba;
     }
     .logo {
         width: 5%; height: auto; aspect-ratio: 1/1;
@@ -101,29 +102,46 @@ Source - https://stackoverflow.com/a/65658994
 Posted by Eric McWinNEr, modified by community. See post 'Timeline' for change history
 Retrieved 2026-09-17, License - CC BY-SA 4.0
 */
-
     #messageDisplay {
-        opacity: 0;
-        transition: 1s;
         font-family: 'Times New Roman', Times, serif; font-size: 16px; color: black;
         display: none;
     }
-    #messageDisplay.fade-in {
-        opacity: 1;
-        transition: 0s;
-    }
-    #messageDisplay.hide {
-        display: none;
-    }
-
-
 /* my additions */
     .hivemindbtntxt {
         font-family: 'Times New Roman', Times, serif; font-size: 16px; color: black;
     }
     .hivemindbtn {
-        font-family: 'Times New Roman', Times, serif; font-size: 16px; color: black;
+        width: fit-content; padding-top: 8px; padding-bottom: 8px; padding-right: 10px; padding-left: 10px;
+        font-family: 'Times New Roman', Times, serif; font-size: 16px; color: white;
+        background-color: black; border-radius: 50%;
+                box-shadow: 0px 0px 2px #1600ba;
     }
+/* Source - https://stackoverflow.com/a/78258173
+Posted by Spectric, modified by community. See post 'Timeline' for change history
+Retrieved 2026-09-17, License - CC BY-SA 4.0 */
+    .added-fade-out {
+    opacity: 0;
+    display: none;
+    animation: fadeOut 2s ease-out;
+    }
+
+    @keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+    }
+
+
+
+
+
+
+
+
 /* Play Buttons */
     .play-button, .forward-button, .back-button {
             height: 32px;
@@ -264,8 +282,8 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
     <!--Page Container-->
         <div class="container">       
     <!--Hivemind Button-->
-            <p class="hivemindbtntxt">Hivemind Button: <button class="hivemindbtn" id="button" onclick="generateMessage()">Tell me what to think!</button></p>
-            <div id="messageDisplay">asdf</div>
+            <p class="hivemindbtntxt">Hivemind Button: <button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
+            <div class="added-fade-out" id="messageDisplay">asdf</div>
 
             <div class="covercontainer">
                 <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/1.png" alt="cover art">
@@ -347,6 +365,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
 <script>
 
 
+// Random Messgae Generator
 // Source - https://www.facebook.com/watch/?v=1417187223529035
 
 let messages = [
@@ -362,7 +381,7 @@ let messages = [
     "\"i don't wanna read your mind, i could read you in a bible\"",
     "\"Allah Smile\"",
     "\"dive right, it\'s not so scary\"",
-    "\"hold me, im a hand\"",
+    "\"hold me, i\'m a hand\"",
     "\"i put a hole in my own head\"",
     "\"break\"",
 
@@ -377,31 +396,31 @@ function generateMessage() {
     document.getElementById('messageDisplay').textContent = messages[randomIndex];
 }
 
-// Source - https://stackoverflow.com/a/65658994
-// Posted by Eric McWinNEr, modified by community. See post 'Timeline' for change history
+// Text Pop-Up take 2
+// Source - https://stackoverflow.com/a/78258173
+// Posted by Spectric, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-09-17, License - CC BY-SA 4.0
 
-let button = document.getElementById("button");
-let text = document.getElementById("messageDisplay");
-function stopfunction() {clearTimeout(text)}
+var text = document.getElementById("messageDisplay");
+text.addEventListener('animationend', () => {
+  text.style.display = "none"
+})
 
-button.addEventListener("click", function () {
+function txtPopup() {
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
 
-button.addEventListener("click", stopfunction)
+// My additions
+var hivemindbtn = document.getElementById("hivemindbtn");
+hivemindbtn.addEventListener("click", function() {
+    generateMessage(), 
+    txtPopup()
+} );
 
-  text.style.display = "block";
-  text.classList.remove("hide");
-  setTimeout(function () {
-    text.classList.add("fade-in");
-    setTimeout(function () {
-      text.classList.remove("fade-in");
-      setTimeout(function () {
-        text.classList.add("hide");
-            text.style.display = "none";
-      }, 1000);
-    }, 500);
-  });
-});
 
 //Song Selector
 //Play Pause Icon Toggle
