@@ -12,7 +12,7 @@
         justify-self: center;
         align-self: center;
 
-        gap: 50px; padding: 50px;
+        gap: 30px; padding: 30px;
         height: 100vh;
 
     }
@@ -31,7 +31,7 @@
     .covercontainer {
         width: 100%;
         display: flex;
-        justify-content: center; align-items: center; gap: 50px;
+        justify-content: center; align-items: center; gap: 30px;
     }
 
 /* Header */
@@ -79,7 +79,7 @@
         width: 100%;
         justify-content: space-evenly; align-items: center;
         flex-direction: column;
-        margin-top: -30px;
+        margin-top: -15px;
     }
     .streamLINK {
         margin: 4px;
@@ -196,10 +196,13 @@
 
 /* Media Query For Mobile */
         @media (max-width: 1200px) {
+            .container {gap: 50px; padding: 50px;}
+            .covercontainer {gap: 50px;}
             .headerFIXED {width: 750px;}
             .headerFIXEDBOX {height: 150px;}
             .spacer {height: 150px;}
 
+            .linkbox {margin-top: -25%;}
             .ytembed {width: 75%; height: auto; aspect-ratio: 16/9;}
             .in {font-size: 32px;}
             .meanwhile {font-size: 32px;}
