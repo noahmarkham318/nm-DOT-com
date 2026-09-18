@@ -240,6 +240,33 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         font-family: 'Times New Roman', Times, serif; font-size: 16px;
     }
 
+/* Ecwid Button */
+        .btnholder{ 
+            width: 100%;
+            text-align: center;
+        }
+        .ecwid-btn,
+        .form-control__button {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border-radius: 0px !important; 
+            border-style: outset !important;
+            border-width: 4px !important; 
+            border-color: white !important; 
+            font-family: 'Times New Roman', serif !important;  /* change to your font */
+            font-size: 14px !important;                    /* optional: change size */
+            font-weight: normal !important;                  /* optional: make text bold */
+            text-transform: lowercase !important;  /* optional: uppercase text */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center! important;
+        }
+/* Hover */
+        .ecsp .ecwid-btn:hover,
+        .ecsp .form-control__button:hover {
+            background-color: #c0c0c0 !important;
+        }
+
 /* Media Query For Mobile */
         @media (max-width: 1200px) {
             .container {gap: 50px; padding: 50px;}
@@ -280,15 +307,20 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         </div> 
         
     <!--Page Container-->
-        <div class="container">       
+        <div class="container">   
+
     <!--Hivemind Button-->
             <p class="hivemindbtntxt">Hivemind Button: <button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
             <div class="added-fade-out" id="messageDisplay" style="display: none;">asdf</div>
 
+    <!--Album Cover-->
             <div class="covercontainer">
                 <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/1.png" alt="cover art">
                 <img class="backcoverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect+Back+cover+2.png" alt="cover art">
             </div>  
+
+    <!--Ecwid Button-->
+            <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-865710225" itemtype="http://schema.org/Product" data-single-product-id="865710225"><div class="ecsp-title" itemprop="name" style="display:none;" content="Strawberry Perfect"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
 
     <!--Streaming Links-->
             <div class="linkbox">
