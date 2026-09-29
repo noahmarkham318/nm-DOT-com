@@ -130,13 +130,16 @@
         display: flex;
         justify-content: center; align-items: center;
     }
-
-    .socialmediabtnIMG {
-        width: 30px;
+    .socialmediabtn {
+        display: flex; justify-content: center; align-items: center;
+        width: 32px; height: 32px;
         border-radius: 0px;
             border-style: outset;
             border-width: 4px;
             border-color: white;
+    }
+    .socialmediabtnIMG {
+        width: 75%;
     }
     .socialmediabtnIMG:hover {
         transform: scale(.9);
@@ -191,13 +194,17 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
     .play-button, .forward-button, .back-button {
             height: 32px;
             width: 32px;
-            background-color: #000000;
+            background-color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             text-decoration: none;
-            border-color: black
+            padding: 15px;
+                border-radius: 0px;
+                border-style: outset;
+                border-width: 4px; 
+                border-color: white;
     }
     .play-button:hover, .forward-button:hover, .back-button:hover {
         transform: scale(.9);
@@ -209,7 +216,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         width: 0px;
         border-top: 7px solid transparent;
         border-bottom: 7px solid transparent;
-        border-left: 9px solid white;
+        border-left: 9px solid black;
         border-radius: 0px;
         
     }
@@ -219,14 +226,13 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         background-color: transparent;
         border-width: 0px 0px 0px 9px;
         border-style: double;
-        border-color: white;
-        margin-left: 3.5px;
+        border-color: black;
     }
     .playspeedicon{
         height: 15px; width: 15px;
         
         font-family: 'Times New Roman', Times, serif;
-        color:white;
+        color:black;
 
         display: flex;
         justify-content: center;
@@ -338,6 +344,8 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             .hivemindbtntxt {font-size: 32px;}
             
             .ecwid-btn, .form-control__button {font-size: 24px !important;}
+
+            .socialmediabtnIMG {height: 64px; width: 64px;}
             }
 </style>
 
@@ -440,10 +448,10 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             </div>
     <!--Social Media Buttons-->
             <div class="socialmediabtnscontainer">
-                <a href="https://www.instagram.com/noahmarkhamnoahmarkham/" target="_blank">
+                <a class="socialmediabtn" href="https://www.instagram.com/noahmarkhamnoahmarkham/" target="_blank">
                     <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/instagram.png" alt="ig">
                 </a>
-                <a href="https://www.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">
+                <a class="socialmediabtn" href="https://www.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">
                     <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/youtube+copy+2.png" alt="yt">
                 </a>
             </div>
