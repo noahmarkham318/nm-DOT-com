@@ -22,12 +22,6 @@
         width: 100%;
 
     }
-    .BtnContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
     .covercontainer {
         width: 100%;
         display: flex;
@@ -47,14 +41,22 @@
         position: fixed;
     }
     .coverart {
-        width: 33%;
-        border-style: solid; border-width: 1px; border-color: black;
+        width: 25%;
+        border-radius: 0px; 
+            border-style: outset;
+            border-width: 4px; 
+            border-color: rgb(255, 255, 255); 
     }
     .backcoverart {
-        width: 33%;
+        width: 25%;
         display: block;
-        border-style: solid; border-width: 1px; border-color: black;
+        border-radius: 0px; 
+            border-style: outset;
+            border-width: 4px; 
+            border-color: rgb(255, 255, 255); 
     }
+    
+
     .header {
         width: 33%; 
         margin-top: 2%;
@@ -85,19 +87,66 @@
         text-align: center;
         color: #1600ba;
     }
-    .logo {
+    .charactercontainer {
+        width: 100%; aspect-ratio: 1/1;
+        border-style: solid;
+    }
+    .gilbert {
+        width: 10%; height: auto; aspect-ratio: 1/1;
+        margin: 25%;
+        object-fit: contain;
+        animation: characterswap; animation-duration: 3s; animation-iteration-count: infinite;
+    }
+    .namelessfaceless {
         width: 5%; height: auto; aspect-ratio: 1/1;
         margin: 25%;
         object-fit: contain;
+        animation: characterswapINVERSE; animation-duration: 3s; animation-iteration-count: infinite;
     }
+    @keyframes characterswap {
+        0% {display: block;}
+        49% {display: block;}
+        50% {display: none;}
+        99% {display: none;}
+        100% {display: block;}
+    }
+    @keyframes characterswapINVERSE {
+        0% {display: none;}
+        49% {display: none;}
+        50% {display: block;}
+        99% {display: block;}
+        100% {display: none;}
+    }
+
     .arrow {
         height: 250px; 
         transform: rotate(180deg);
         aspect-ratio: 9/16;
         object-fit: contain;
     }
+    
+    .socialmediabtnscontainer {
+        width: fit-content;
+        display: flex;
+        justify-content: center; align-items: center;
+    }
+
+    .socialmediabtnIMG {
+        width: 30px;
+        border-radius: 0px;
+            border-style: outset;
+            border-width: 4px;
+            border-color: white;
+    }
+    .socialmediabtnIMG:hover {
+        transform: scale(.9);
+        border-color: #1600ba;
+        background-color: #1600ba;
+    }
 
 /*
+HIVEMIND BUTTON
+
 Source - https://stackoverflow.com/a/65658994
 Posted by Eric McWinNEr, modified by community. See post 'Timeline' for change history
 Retrieved 2026-09-17, License - CC BY-SA 4.0
@@ -112,9 +161,18 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
     .hivemindbtn {
         width: fit-content; padding-top: 8px; padding-bottom: 8px; padding-right: 10px; padding-left: 10px;
         font-family: 'Times New Roman', Times, serif; font-size: 16px; color: white;
-        background-color: black; border-radius: 50%;
+        background-color: black; 
+        border-radius: 50%;
+            border-style: outset;
+            border-width: 4px; 
+            border-color: rgb(255, 255, 255); 
+        
         box-shadow: 0px 0px 2px #1600ba;
     }
+    .hivemindbtn:hover {
+            background-color: #1600ba !important;
+            transform: scale(.95);
+        }
 /* Source - https://stackoverflow.com/a/78258173
 Posted by Spectric, modified by community. See post 'Timeline' for change history
 Retrieved 2026-09-17, License - CC BY-SA 4.0 */
@@ -125,13 +183,8 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
     }
 
     @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    0% {opacity: 1;}
+    100% {opacity: 0;}
     }
 
 /* Play Buttons */
@@ -190,22 +243,19 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         left: 50%; transform: translate(-50%);
     }
     .btnscontainer{
-        width: fit-content; padding: 1%;
+        width: fit-content;
         display: block;
-        position: relative;
-        left: 50%; transform: translate(-50%);
-        margin-top: 2%;
-        border-style: solid; border-width: 1px; border-color: black;
     }
 
 /* Song Selector */
     .songselectorcontainer{
+        display: flex; flex-direction: column;
         margin-top: 1%;
         position: fixed; 
         left: 50%; transform: translateX(-50%); bottom: 75px;
         text-align: center;
         border-style: solid; border-width: 1px; border-color: black;
-        padding: 10px;
+        padding: 10px; gap: 10px; justify-content: space-evenly; align-items: center;
         width: fit-content;
         z-index: 4;
         background-color: white;
@@ -301,7 +351,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         </div> 
         
     <!--Page Container-->
-        <div class="container">   
+        <div class="container">  
 
     <!--Hivemind Button-->
             <p class="hivemindbtntxt">Hivemind Button: <button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
@@ -349,16 +399,19 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
                 allowfullscreen>
             </iframe>
 
-            <img class="logo" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png" alt="noah markham">
 
+                <img class="gilbert" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/NEXT+COVER+(trans).png" alt="noah markham">
+                <img class="namelessfaceless" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/LOGO+SCAN+2025+(Keyed+instead+of+object+selection)+(WHITEFACE).png" alt="noah markham">
+            
             <div class="footer">asdf</div>
             
         </div>
 
        
 
-    <!--Song Selector-->
+<!--Pop-Up Box-->
         <div class="songselectorcontainer">
+    <!--Song Selector-->
             <div class="selector">
             <label class="songselectorlabel" for="membership">Choose a song:</label>
                 <select class="songselector" name="membership" id="membership">
@@ -372,7 +425,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
                     <option value="PWPSAS">8. Person Watching People Stare @ Someone #hip</option>
                 </select>
             </div>
-            <!--Play Buttons-->
+    <!--Play Buttons-->
             <audio id="player"></audio>
             <div class="btnscontainer">
             <div class="btnsrow">
@@ -384,6 +437,15 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
                 <button class="play-button" onclick="onepointfivespeed()"><div class="playspeedicon">1.5x</div></button>
                 <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
             </div>
+            </div>
+    <!--Social Media Buttons-->
+            <div class="socialmediabtnscontainer">
+                <a href="https://www.instagram.com/noahmarkhamnoahmarkham/" target="_blank">
+                    <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/instagram.png" alt="ig">
+                </a>
+                <a href="https://www.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">
+                    <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/youtube+copy+2.png" alt="yt">
+                </a>
             </div>
         </div>
    
