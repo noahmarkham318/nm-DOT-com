@@ -1,6 +1,6 @@
 <html>
 <style>
-    body{
+    *{
         margin: 0%;
     }
 /* Containers */
@@ -9,11 +9,8 @@
         align-items: center;
         justify-content: top;
         flex-direction: column;
-        justify-self: center;
-        align-self: center;
-
+        
         gap: 30px; padding: 30px;
-        height: 100vh;
 
     }
     .footer {
@@ -42,25 +39,14 @@
     }
     .coverart {
         width: 25%;
-        border-radius: 0px; 
-            border-style: outset;
-            border-width: 4px; 
-            border-color: rgb(255, 255, 255); 
+        border-style: solid; border-color: black; border-width: 1px;
     }
     .backcoverart {
         width: 25%;
         display: block;
-        border-radius: 0px; 
-            border-style: outset;
-            border-width: 4px; 
-            border-color: rgb(255, 255, 255); 
+        border-style: solid; border-color: black; border-width: 1px;
     }
     
-
-    .header {
-        width: 33%; 
-        margin-top: 2%;
-    }
     .spacer {
         width: 100%; height: 100px;
         background-color: red;
@@ -78,7 +64,7 @@
         width: 100%;
         justify-content: space-evenly; align-items: center;
         flex-direction: column;
-        margin-top: -20px;
+        margin-top: -14px;
     }
     .streamLINK {
         margin: 4px;
@@ -108,15 +94,13 @@
         0% {display: block;}
         49% {display: block;}
         50% {display: none;}
-        99% {display: none;}
-        100% {display: block;}
+        100% {display: none;}
     }
     @keyframes characterswapINVERSE {
         0% {display: none;}
         49% {display: none;}
         50% {display: block;}
-        99% {display: block;}
-        100% {display: none;}
+        100% {display: block;}
     }
 
     .arrow {
@@ -219,6 +203,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         border-bottom: 7px solid transparent;
         border-left: 9px solid black;
         border-radius: 0px;
+        justify-self: center; align-self: center;
         
     }
     .pauseicon {
@@ -257,7 +242,6 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
 /* Song Selector */
     .songselectorcontainer{
         display: flex; flex-direction: column;
-        margin-top: 1%;
         position: fixed; 
         left: 50%; transform: translateX(-50%); bottom: 75px;
         text-align: center;
@@ -335,7 +319,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
 
             .play-button {height: 64px; width: 64px;}
             .playspeedicon {font-size: 3vw;}
-            .btnscontainer {margin-top: 3%; padding: 0%; border-style: none;}
+
             .songselector {font-size: 3vw;}
             .songselectorlabel {font-size: 3vw;}
 
