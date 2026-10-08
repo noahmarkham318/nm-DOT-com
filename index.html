@@ -57,6 +57,11 @@
     }
 
     /* Elements */
+    .ytembedbox {
+        width: 100%;
+        display: flex;
+        justify-content: center; align-items: center;
+    }
     .ytembed { 
         display: block !important;
         width: 33% !important; height: auto !important;
@@ -355,14 +360,15 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             <div class="added-fade-out" id="messageDisplay" style="display: none;">asdf</div>
 
     <!--Youtube Embeds-->
-            <iframe class="ytembed" src="https://www.youtube.com/embed/buLLaMcjmt4?si=X8UJHcPEBod2muIL" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen></iframe>
-            </iframe>
-            
+            <div class="ytembedbox">
+                <iframe class="ytembed" src="https://www.youtube.com/embed/buLLaMcjmt4?si=X8UJHcPEBod2muIL" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen></iframe>
+                </iframe>
+            </div>
             <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+3.png" alt="arrow">
             
    
