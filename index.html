@@ -5,6 +5,10 @@
 <style>
     *{
         margin: 0%;
+        cursor: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Crosshari+Cursor+copy.png"), default;
+    }
+    body {
+        cursor: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Crosshari+Cursor+copy.png"), default;
     }
 /* Containers */
     .container {
@@ -22,41 +26,54 @@
         width: 100%;
 
     }
-    .covercontainer {
-        width: 100%;
-        display: flex;
-        justify-content: center; align-items: center; gap: 30px;
-    }
 
 /* Header */
     .headerFIXEDBOX {
         width: 100%; height: 100px;
         position: fixed;
-        background-color: black;
+        background-color: white;
         top: 0; left: 0;
-        display: flex; justify-content: center; align-items: center;
+        display: flex; justify-content: space-between; align-items: center;
+        cursor: crosshair;
+        box-shadow: 0px 0px 10px white;
+        z-index: 4;
+
     }
+    .spacer {
+        width: 100%; height: 90px;
+        background-color: red;
+        box-shadow: 0px 0px 10px red;
+        
+    }
+
     .headerFIXED {
         width: 500px;
         position: fixed;
-    }
-    .coverart {
-        width: 25%;
-        border-style: solid; border-color: black; border-width: 1px;
-    }
-    .backcoverart {
-        width: 25%;
-        display: block;
-        border-style: solid; border-color: black; border-width: 1px;
-    }
-    
-    .spacer {
-        width: 100%; height: 100px;
-        background-color: red;
-        box-shadow: 0px 0px 2px red;
+        left: 50%; transform: translate(-50%);
     }
 
-    /* Elements */
+    .menubutton {
+        width: 5%;
+        margin: 20px;
+    }
+
+    .menubutton:hover {
+        transform: scale(.9);
+        cursor: pointer;
+    }
+    
+   
+/* Elements */
+    .CDcase {
+        width: 33%; aspect-ratio: 1/1;
+        background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Column+Trans0001.png");
+        background-size: cover;
+    }
+    .CDcase:hover {
+        background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Column+Trans0024.png");
+        cursor: pointer;
+    }
+
     .ytembedbox {
         width: 100%;
         display: flex;
@@ -70,7 +87,7 @@
     }
     .linkbox {
         display: flex;
-        width: 100%;
+        width: 50%;
         justify-content: space-evenly; align-items: center;
         flex-direction: column;
         margin-top: -14px;
@@ -120,13 +137,17 @@
     }
     
     .socialmediabtnscontainer {
-        width: fit-content;
+        width: auto;
         display: flex;
         justify-content: center; align-items: center;
+        margin: 20px;
+        background-color: black
     }
     .socialmediabtn {
         display: flex; justify-content: center; align-items: center;
         width: 32px; height: 32px;
+        fill: white;
+        background-color: white;
         border-radius: 0px;
             border-style: outset;
             border-width: 4px;
@@ -134,11 +155,13 @@
     }
     .socialmediabtnIMG {
         width: 75%;
+        cursor: pointer;
     }
-    .socialmediabtnIMG:hover {
+    .socialmediabtn:hover {
         transform: scale(.9);
         border-color: #1600ba;
         background-color: #1600ba;
+        cursor: pointer;
     }
 
 /*
@@ -154,6 +177,9 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
 /* my additions */
     .hivemindbtntxt {
         font-family: 'Times New Roman', Times, serif; font-size: 16px; color: black; 
+        z-index: 4;
+        position: relative;
+        margin: 20px;
     }
     .hivemindbtn {
         width: fit-content; padding-top: 8px; padding-bottom: 8px; padding-right: 10px; padding-left: 10px;
@@ -165,10 +191,14 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
             border-color: rgb(255, 255, 255); 
         
         box-shadow: 0px 0px 2px #1600ba;
+        z-index: 4;
+        position: relative;
     }
     .hivemindbtn:hover {
+            position: relative;
             background-color: #1600ba !important;
             transform: scale(.95);
+            cursor: pointer;
         }
 /* Source - https://stackoverflow.com/a/78258173
 Posted by Spectric, modified by community. See post 'Timeline' for change history
@@ -177,10 +207,16 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
     opacity: 0;
     display: none;
     animation: fadeOut 2s ease-out;
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 3;
+    width: 100%; height: 100vh;
+    justify-content: center; align-items: center;
     }
 
     @keyframes fadeOut {
     0% {opacity: 1;}
+    10% {opacity: 1;}
     100% {opacity: 0;}
     }
 
@@ -204,6 +240,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         transform: scale(.9);
         border-color: #1600ba;
         background-color: #1600ba;
+        cursor: pointer;
     } 
     .playicon {
         height: 0px;
@@ -213,6 +250,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         border-left: 9px solid black;
         border-radius: 0px;
         justify-self: center; align-self: center;
+        cursor: pointer;
         
     }
     .pauseicon {
@@ -222,6 +260,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         border-width: 0px 0px 0px 9px;
         border-style: double;
         border-color: black;
+        cursor: pointer;
     }
     .playspeedicon{
         height: 15px; width: 15px;
@@ -233,6 +272,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         justify-content: center;
         align-items: center;
         text-decoration: none;
+        cursor: pointer;
     }
     .playspeedicon:hover{
         background-color: #1600ba;
@@ -257,7 +297,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         border-style: solid; border-width: 1px; border-color: black;
         padding: 10px; gap: 10px; justify-content: space-evenly; align-items: center;
         width: fit-content;
-        z-index: 4;
+        z-index: 2;
         background-color: white;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.378);
         opacity: 95%;
@@ -303,6 +343,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
+            z-index: 1 !important;
         }
 /* Hover */
         .ecsp .ecwid-btn:hover,
@@ -344,39 +385,35 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
 </style>
 
 <body>
-        <div class="spacer"></div>
-
-        <div class="headerFIXEDBOX">
-        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/strawberry+perfect+horizontal+4+(white+strawberry).png" 
-        alt="Strawberry Perfect" 
-        class="headerFIXED">   
-        </div> 
+<!--Header-->
+    <div class="spacer"></div>
         
-    <!--Page Container-->
-        <div class="container">  
-   
-    <!--Hivemind Button-->
+    <div class="headerFIXEDBOX">
+        <!--Social Media Buttons-->
+        <div class="socialmediabtnscontainer">
+            <a class="socialmediabtn" href="https://www.instagram.com/noahmarkhamnoahmarkham/" target="_blank">
+                <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/instagram.png" alt="ig">
+            </a>
+            <a class="socialmediabtn" href="https://www.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">
+                <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/youtube+copy+2.png" alt="yt">
+            </a>
+            </div>
+            
+<!--Strawberry Perfect-->
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/strawberry+perfect+horizontal+2.png" 
+            alt="Strawberry Perfect" 
+            class="headerFIXED">
+        
+<!--Hivemind Button-->
             <p class="hivemindbtntxt">Hivemind Button: <button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
             <div class="added-fade-out" id="messageDisplay" style="display: none;">asdf</div>
+   </div> 
 
-    <!--Youtube Embeds-->
-            <div class="ytembedbox">
-                <iframe class="ytembed" src="https://www.youtube.com/embed/buLLaMcjmt4?si=X8UJHcPEBod2muIL" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen></iframe>
-                </iframe>
-            </div>
-            <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+3.png" alt="arrow">
-            
-   
-    <!--Album Cover-->
-            <div class="covercontainer">
-                <img class="coverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/1.png" alt="cover art">
-                <img class="backcoverart" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/Strawberry+Perfect+Back+cover+2.png" alt="cover art">
-            </div>  
+<!--Page Container-->
+        <div class="container">  
+
+    <!--CD Case Column-->
+            <div class="CDcase" onclick="playpause(), togglePlay(), normalspeed()"></div>
 
     <!--Ecwid Button-->
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-865710225" itemtype="http://schema.org/Product" data-single-product-id="865710225"><div class="ecsp-title" itemprop="name" style="display:none;" content="Strawberry Perfect"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
@@ -392,7 +429,22 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
                 <a class="streamLINK" href="" target="_blank">qobuz</a>
                 <a class="streamLINK" href="https://tidal.com/album/561140151/u" target="_blank">tidal</a>
             </div>
-            
+
+
+
+
+            <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+3.png" alt="arrow">
+
+              <!--Alba YT Embed-->
+            <div class="ytembedbox">
+                <iframe class="ytembed" src="https://www.youtube.com/embed/buLLaMcjmt4?si=X8UJHcPEBod2muIL" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen></iframe>
+                </iframe>
+            </div>
             <img class="arrow" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Website+Visual+Assets/arrow+for+website+3.png" alt="arrow">
 
     <!--Youtube Embeds-->
@@ -457,22 +509,11 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
                 <button class="play-button" onclick="twicespeed()"><div class="playspeedicon">2x</div></button>
             </div>
             </div>
-    <!--Social Media Buttons-->
-            <div class="socialmediabtnscontainer">
-                <a class="socialmediabtn" href="https://www.instagram.com/noahmarkhamnoahmarkham/" target="_blank">
-                    <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/instagram.png" alt="ig">
-                </a>
-                <a class="socialmediabtn" href="https://www.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">
-                    <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/youtube+copy+2.png" alt="yt">
-                </a>
-            </div>
         </div>
    
 </body>
 
 <script>
-
-
 // Random Messgae Generator
 // Source - https://www.facebook.com/watch/?v=1417187223529035
 
@@ -516,7 +557,7 @@ text.addEventListener('animationend', () => {
 
 function txtPopup() {
   if (text.style.display === "none") {
-    text.style.display = "block";
+    text.style.display = "flex";
   } else {
     text.style.display = "none";
   }
