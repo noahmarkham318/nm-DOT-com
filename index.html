@@ -51,7 +51,6 @@
         position: fixed;
         left: 50%; transform: translate(-50%);
     }
-
     .menubutton {
         width: 5%;
         margin: 20px;
@@ -194,12 +193,44 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
         z-index: 4;
         position: relative;
     }
+
     .hivemindbtn:hover {
             position: relative;
             background-color: #1600ba !important;
             transform: scale(.95);
             cursor: pointer;
         }
+
+    .hivemindbtntxtMOBILE {
+        display: none;
+        font-family: 'Times New Roman', Times, serif; font-size: 32px; color: black; 
+        z-index: 4;
+        position: relative;
+        margin: 20px;
+        width: 100%;
+        justify-content: center; align-items: center
+    }
+    .hivemindbtnMOBILE {
+        display: none;
+        width: fit-content; padding-top: 16px; padding-bottom: 16px; padding-right: 20px; padding-left: 20px;
+        font-family: 'Times New Roman', Times, serif; font-size: 32px; color: white;
+        background-color: black; 
+        border-radius: 50%;
+            border-style: outset;
+            border-width: 4px; 
+            border-color: rgb(255, 255, 255); 
+        box-shadow: 0px 0px 2px #1600ba;
+        z-index: 4;
+        position: relative;
+        ;
+    }
+    
+    .hivemindbtnMOBILE:hover {
+            position: relative;
+            background-color: #1600ba !important;
+            transform: scale(.95);
+            cursor: pointer;
+    }
 /* Source - https://stackoverflow.com/a/78258173
 Posted by Spectric, modified by community. See post 'Timeline' for change history
 Retrieved 2026-09-17, License - CC BY-SA 4.0 */
@@ -355,7 +386,6 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         @media (max-width: 1200px) {
             .container {gap: 50px; padding: 50px;}
             .covercontainer {gap: 50px;}
-            .headerFIXED {width: 500px;}
             .headerFIXEDBOX {height: 150px;}
             .spacer {height: 150px;}
 
@@ -374,8 +404,10 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             .songselectorlabel {font-size: 3vw;}
 
             #messageDisplay {font-size: 32px;}
-            .hivemindbtn {font-size: 16px; padding-top: 16px; padding-bottom: 16px; padding-right: 24px; padding-left: 24px;}
-            .hivemindbtntxt {font-size: 16px;}
+            .hivemindbtn {display: none;}
+            .hivemindbtntxt {display: none;}
+            .hivemindbtnMOBILE {display: block;}
+            .hivemindbtntxtMOBILE {display: flex;}
             
             .ecwid-btn, .form-control__button {font-size: 24px !important;}
 
@@ -405,12 +437,15 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             class="headerFIXED">
         
 <!--Hivemind Button-->
-            <p class="hivemindbtntxt">Hivemind Button: <button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
-            <div class="added-fade-out" id="messageDisplay" style="display: none;">asdf</div>
+            <p class="hivemindbtntxt">Hivemind Button:&nbsp;<button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
+            <div class="added-fade-out" id="messageDisplay" style="display: none;"></div>  
    </div> 
 
 <!--Page Container-->
         <div class="container">  
+
+<!--Mobile Hivemind Button-->
+            <p class="hivemindbtntxtMOBILE">Hivemind Button:&nbsp;<button class="hivemindbtnMOBILE" id="hivemindbtnMOBILE">Tell me what to think!</button></p>
 
     <!--CD Case Column-->
             <div class="CDcase" onclick="playpause(), togglePlay(), normalspeed()"></div>
@@ -570,6 +605,19 @@ hivemindbtn.addEventListener("click", function() {
     generateMessage(), 
     txtPopup()
 } );
+
+// (Mobile)
+var hivemindbtnMOBILE = document.getElementById("hivemindbtnMOBILE");
+
+hivemindbtnMOBILE.addEventListener("click", function() {
+    generateMessage(), 
+    txtPopup()
+} );
+
+
+
+
+
 
 
 //Song Selector
