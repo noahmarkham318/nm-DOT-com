@@ -65,13 +65,13 @@
 /* Elements */
     .CDcase {
         width: 33%; aspect-ratio: 1/1;
-        background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_Column_Sky_Trans0001.webp");
+        background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_Column_WhiteBG0001.jpg");
         background-size: cover;
         background-position: center;
         background-color: transparent;
     }
     .CDcase:hover {
-        background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_Column_Sky_Trans0024.webp");
+        background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_Column_WhiteBG0024.jpg");
         cursor: pointer;
     }
     .CDcaseMOBILE {
@@ -429,8 +429,8 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             .socialmediabtn {height: 64px; width: 64px;}
             .charactercontainer {width: 500px; height: 500px;}
 
-            .CDcase {display: none;}
-            .CDcaseMOBILE {display: block;}
+            .CDcase {background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_NoColumn_WhiteBG0001.jpg");}
+            .CDcase:hover {background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_NoColumn_WhiteBG0024.jpg");}
 
             }
 </style>
@@ -440,7 +440,15 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
     <div class="spacer"></div>
         
     <div class="headerFIXEDBOX">
-        <!--Social Media Buttons-->
+
+<!--Hivemind Button-->
+            <p class="hivemindbtntxt">Hivemind Button:&nbsp;<button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
+            <div class="added-fade-out" id="messageDisplay" style="display: none;"></div>  
+<!--Strawberry Perfect-->
+        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/strawberry+perfect+horizontal+2.png" 
+            alt="Strawberry Perfect" 
+            class="headerFIXED">
+<!--Social Media Buttons-->
         <div class="socialmediabtnscontainer">
             <a class="socialmediabtn" href="https://www.instagram.com/noahmarkhamnoahmarkham/" target="_blank">
                 <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/instagram.png" alt="ig">
@@ -448,18 +456,8 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             <a class="socialmediabtn" href="https://www.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">
                 <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/youtube+copy+2.png" alt="yt">
             </a>
-            </div>
-            
-<!--Strawberry Perfect-->
-        <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/strawberry+perfect+horizontal+2.png" 
-            alt="Strawberry Perfect" 
-            class="headerFIXED">
-        
-<!--Hivemind Button-->
-            <p class="hivemindbtntxt">Hivemind Button:&nbsp;<button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
-            <div class="added-fade-out" id="messageDisplay" style="display: none;"></div>  
-   </div> 
-
+        </div>
+    </div>
 <!--Page Container-->
         <div class="container">  
 
@@ -468,11 +466,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
 
     <!--CD Case Column-->
             <div class="CDcase" onclick="playpause(), togglePlay(), normalspeed()"></div>
-
-            <img class="CDcaseMOBILE2" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_NoColumn_Trans0001.avif" alt="">
-            <img class="CDcaseMOBILE" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CD+Case+no+column0001.webp" alt="">
              
-
     <!--Ecwid Button-->
             <div class="ecsp ecsp-SingleProduct-v2 ecsp-Product ec-Product-865710225" itemtype="http://schema.org/Product" data-single-product-id="865710225"><div class="ecsp-title" itemprop="name" style="display:none;" content="Strawberry Perfect"></div><div customprop="addtobag"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?108752337&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
 
