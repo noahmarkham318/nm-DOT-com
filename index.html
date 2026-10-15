@@ -65,7 +65,6 @@
 /* Elements */
     .CDcase {
         width: 33%; height: auto; aspect-ratio: 1/1;
-        border-style: solid;
         background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_Column_WhiteBG0001.jpg");
         background-size: contain;
         background-position: center;
@@ -144,7 +143,6 @@
         display: flex;
         justify-content: center; align-items: center;
         margin: 20px;
-        background-color: black
     }
     .socialmediabtn {
         display: flex; justify-content: center; align-items: center;
@@ -183,6 +181,7 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
         z-index: 4;
         position: relative;
         margin: 20px;
+        opacity: 1;
     }
     .hivemindbtn {
         width: fit-content; padding-top: 8px; padding-bottom: 8px; padding-right: 10px; padding-left: 10px;
@@ -234,6 +233,10 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0
             background-color: #1600ba !important;
             transform: scale(.95);
             cursor: pointer;
+    }
+    .blankspaceforalignment {
+        display: none;
+        opacity: 0;
     }
 /* Source - https://stackoverflow.com/a/78258173
 Posted by Spectric, modified by community. See post 'Timeline' for change history
@@ -412,13 +415,14 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             .hivemindbtntxt {display: none;}
             .hivemindbtnMOBILE {display: block;}
             .hivemindbtntxtMOBILE {display: flex;}
+            .blankspaceforalignment {display: block;}
             
             .ecwid-btn, .form-control__button {font-size: 24px !important;}
 
             .socialmediabtn {height: 64px; width: 64px;}
             .charactercontainer {width: 500px; height: 500px;}
 
-            .CDcase { width: 50%; background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_NoColumn_WhiteBG0001.jpg");}
+            .CDcase {width: 50%; background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_NoColumn_WhiteBG0001.jpg");}
             .CDcase:hover {background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_NoColumn_WhiteBG0024.jpg");}
             }
 </style>
@@ -429,13 +433,14 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         
     <div class="headerFIXEDBOX">
 
-<!--Hivemind Button-->
-            <p class="hivemindbtntxt">Hivemind Button:&nbsp;<button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
-            <div class="added-fade-out" id="messageDisplay" style="display: none;"></div>  
+
 <!--Strawberry Perfect-->
         <img src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/strawberry+perfect+horizontal+2.png" 
             alt="Strawberry Perfect" 
             class="headerFIXED">
+
+    
+        <div class="blankspaceforalignment">asdf</div>
 <!--Social Media Buttons-->
         <div class="socialmediabtnscontainer">
             <a class="socialmediabtn" href="https://www.instagram.com/noahmarkhamnoahmarkham/" target="_blank">
@@ -445,6 +450,13 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
                 <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/youtube+copy+2.png" alt="yt">
             </a>
         </div>
+
+        
+
+
+        <!--Hivemind Button-->
+            <p class="hivemindbtntxt">Hivemind Button:&nbsp;<button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
+            <div class="added-fade-out" id="messageDisplay" style="display: none;"></div>  
     </div>
 <!--Page Container-->
         <div class="container">  
