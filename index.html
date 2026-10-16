@@ -145,6 +145,12 @@
         justify-content: center; align-items: center;
         margin: 20px;
     }
+    .socialmediabtnscontainerMOBILE {
+        width: auto;
+        display: none;
+        justify-content: center; align-items: center;
+        margin: 20px;
+    }
     .socialmediabtn {
         display: flex; justify-content: center; align-items: center;
         width: 32px; height: 32px;
@@ -421,6 +427,8 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
             .ecwid-btn, .form-control__button {font-size: 24px !important;}
 
             .socialmediabtn {height: 64px; width: 64px;}
+            .socialmediabtnscontainer {display: none;}
+            .socialmediabtnscontainerMOBILE {display: flex;}
             .charactercontainer {width: 500px; height: 500px;}
 
             .CDcase {width: 50vw; background-image: url("https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Strawberry+Perfect/CDcase_NoColumn_WhiteBG_v20001.jpg");}
@@ -455,16 +463,28 @@ Retrieved 2026-09-17, License - CC BY-SA 4.0 */
         
 
 
-        <!--Hivemind Button-->
+<!--Hivemind Button-->
             <p class="hivemindbtntxt">Hivemind Button:&nbsp;<button class="hivemindbtn" id="hivemindbtn">Tell me what to think!</button></p>
             <div class="added-fade-out" id="messageDisplay" style="display: none;"></div>  
     </div>
+
+
+
 <!--Page Container-->
         <div class="container">  
 
 <!--Mobile Hivemind Button-->
             <p class="hivemindbtntxtMOBILE">Hivemind Button:&nbsp;<button class="hivemindbtnMOBILE" id="hivemindbtnMOBILE">Tell me what to think!</button></p>
 
+<!--Social Media Buttons MOBILE-->
+    <div class="socialmediabtnscontainerMOBILE">
+        <a class="socialmediabtn" href="https://www.instagram.com/noahmarkhamnoahmarkham/" target="_blank">
+            <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/instagram.png" alt="ig">
+        </a>
+        <a class="socialmediabtn" href="https://www.youtube.com/channel/UCeEz7jr0X5gvtMXrNGPuivw" target="_blank">
+            <img class="socialmediabtnIMG" src="https://Noah-Website-Assets.s3.us-west-000.backblazeb2.com/Menu+Buttons/Social+Media+Icons/youtube+copy+2.png" alt="yt">
+        </a>
+    </div>
 <!--CD Case Column-->
             <div class="CDcase" onclick="playpause(), togglePlay(), normalspeed()"></div>
              
